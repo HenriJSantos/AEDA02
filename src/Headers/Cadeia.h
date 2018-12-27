@@ -15,28 +15,13 @@ using namespace std;
 
 struct classcomp{
 
-	bool operator()(const Cliente * c1, const Cliente * c2) const{
-		if(c1->getDistrito() < c2->getDistrito()){
-			return true;
-		}
-		else{
-			if(c1->getDistrito() == c2->getDistrito()){
-				if(c1->getNome() < c2->getNome()){
-					return true;
-				}
-				else{
-					if(c1->getNoContribuinte() < c2->getNoContribuinte()){
-						return true;
-					}
-					else{
-						return false;
-					}
-				}
-			}
-			else{
-				return false;
-			}
-		}
+	bool operator()(const Cliente * c1, const Cliente * c2) const
+	{
+		if(c1->getDistrito() != c2->getDistrito())
+			return (c1->getDistrito() < c2->getDistrito());
+		else if (c1->getNome() != c2->getNome())
+			return (c1->getNome() < c2->getNome());
+		else return (c1->getNoContribuinte() < c2->getNoContribuinte());
 	}
 };
 

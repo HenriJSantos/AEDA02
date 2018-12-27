@@ -66,13 +66,14 @@ void Cadeia::addCliente(Cliente* cliente)
 void Cadeia::rmCliente(unsigned int contribCliente)
 {
 	bool removed;
-	for (unsigned int i = 0; i < this->clientes.size(); i++)
+	set<Cliente*, classcomp>::iterator itr;
+	for (itr = clientes.begin(); itr != clientes.end(); itr++)
 	{
-		if (this->clientes[i]->getNoContribuinte() == contribCliente)
+		if ((*itr)->getNoContribuinte() == contribCliente)
 		{
 			removed = true;
-			delete this->clientes[i];
-			this->clientes.erase(this->clientes.begin()+i);
+			delete itr;
+			this->clientes.erase(itr);
 		}
 	}
 	if (!removed)
@@ -141,11 +142,12 @@ Funcionario* Cadeia::getFuncionarioComNome(string nome)
 
 Cliente* Cadeia::getClienteComNoContribuinte(unsigned int noContribuinte)
 {
-	for (unsigned int i = 0; i < this->clientes.size(); i++)
+	set<Cliente*, classcomp>::iterator itr;
+	for (itr = clientes.begin(); itr != clientes.end(); itr++)
 	{
-		if (this->clientes[i]->getNoContribuinte() == noContribuinte)
+		if ((*itr)->getNoContribuinte() == noContribuinte)
 		{
-			return this->clientes[i];
+			return *itr;
 		}
 	}
 	throw(NaoExistePessoa(noContribuinte, "Cliente"));
