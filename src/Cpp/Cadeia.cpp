@@ -214,31 +214,32 @@ void Cadeia::exportarCadeia()
 		out << "   Password: " << this->funcionarios[i]->getPassword() << endl << endl;
 	}
 	out << "Clientes:\n";
-	for (unsigned int i = 0; i < this->clientes.size(); i++)
+	set<Cliente*, classcomp>::iterator itr;
+	for (itr = clientes.begin(); itr != clientes.end(); itr++)
 	{
-		out << "   Nome: " << this->clientes[i]->getNome() << endl;
-		out << "   No. Contribuinte: " << this->clientes[i]->getNoContribuinte() << endl;
-		out << "   Morada: " << this->clientes[i]->getMorada() << endl;
-		out << "   Distrito: " << this->clientes[i]->getDistrito() << endl;
+		out << "   Nome: " << (*itr)->getNome() << endl;
+		out << "   No. Contribuinte: " << (*itr)->getNoContribuinte() << endl;
+		out << "   Morada: " << (*itr)->getMorada() << endl;
+		out << "   Distrito: " << (*itr)->getDistrito() << endl;
 		out << "   Historial:" << endl;
-		if(this->clientes.at(i)->getHistorial().size()==0){
+		if((*itr)->getHistorial().size()==0){
 			out << "     Nenhuma compra efetuada" << endl;
 		}
-		for(unsigned int j = 0; j < this->clientes.at(i)->getHistorial().size(); j++){
-			out << "     Compra " << this->clientes.at(i)->getHistorial().at(j)->getId() << ":" << endl;
-			out << "       Funcionario: " << this->clientes.at(i)->getHistorial().at(j)->getFuncionario() << endl;
-			out << "       Data: " << this->clientes.at(i)->getHistorial().at(j)->getData() << endl;
-			out << "       Hora: " << this->clientes.at(i)->getHistorial().at(j)->getHora() << endl;
+		for(unsigned int j = 0; j < (*itr)->getHistorial().size(); j++){
+			out << "     Compra " << (*itr)->getHistorial().at(j)->getId() << ":" << endl;
+			out << "       Funcionario: " << (*itr)->getHistorial().at(j)->getFuncionario() << endl;
+			out << "       Data: " << (*itr)->getHistorial().at(j)->getData() << endl;
+			out << "       Hora: " << (*itr)->getHistorial().at(j)->getHora() << endl;
 			out << "       Produtos: " << endl;
-			for(unsigned int k=0; k < this->clientes.at(i)->getHistorial().at(j)->getItens().size(); k++){
-				out << "         Produto: " << this->clientes.at(i)->getHistorial().at(j)->getItens().at(k).getNome() << endl;
-				out << "         Quantidade: " << this->clientes.at(i)->getHistorial().at(j)->getItens().at(k).getQuant() << endl;
-				out << "         Preco Unidade: " << this->clientes.at(i)->getHistorial().at(j)->getItens().at(k).getPrecUnid() << "€" << endl;
-				out << "         Iva: " << this->clientes.at(i)->getHistorial().at(j)->getItens().at(k).getIva() << "%" << endl;
-				out << "         Comparticipacao: " << setprecision(2) << fixed << this->clientes.at(i)->getHistorial().at(j)->getItens().at(k).getCompart() << "€" << endl;
-				out << "         Subtotal: " << setprecision(2) << fixed << this->clientes.at(i)->getHistorial().at(j)->getItens().at(k).getSubtotal() << "€" << endl << endl;
+			for(unsigned int k=0; k < (*itr)->getHistorial().at(j)->getItens().size(); k++){
+				out << "         Produto: " << (*itr)->getHistorial().at(j)->getItens().at(k).getNome() << endl;
+				out << "         Quantidade: " << (*itr)->getHistorial().at(j)->getItens().at(k).getQuant() << endl;
+				out << "         Preco Unidade: " << (*itr)->getHistorial().at(j)->getItens().at(k).getPrecUnid() << "€" << endl;
+				out << "         Iva: " << (*itr)->getHistorial().at(j)->getItens().at(k).getIva() << "%" << endl;
+				out << "         Comparticipacao: " << setprecision(2) << fixed << (*itr)->getHistorial().at(j)->getItens().at(k).getCompart() << "€" << endl;
+				out << "         Subtotal: " << setprecision(2) << fixed << (*itr)->getHistorial().at(j)->getItens().at(k).getSubtotal() << "€" << endl << endl;
 			}
-			out << "       Total: " << this->clientes.at(i)->getHistorial().at(j)->getTotal() << endl;
+			out << "       Total: " << (*itr)->getHistorial().at(j)->getTotal() << endl;
 			out << endl;
 		}
 	}
@@ -394,7 +395,7 @@ Cadeia::~Cadeia()
 {
 	while(!this->clientes.empty())
 	{
-		delete this->clientes[0];
+		delete *(this->clientes.begin());
 		this->clientes.erase(this->clientes.begin());
 	}
 
@@ -431,8 +432,10 @@ std::ostream& operator<< (ostream & out, Cadeia &cadeia){
 		out << *cadeia.funcionarios.at(i) << endl;
 	}
 	out << "Clientes da Cadeia:" << endl << endl;
-	for(unsigned int i = 0; i<cadeia.clientes.size(); i++){
-		out << *cadeia.clientes.at(i) << endl;
+	set<Cliente*, classcomp>::iterator itr;
+	for (itr = cadeia.clientes.begin(); itr != cadeia.clientes.end(); itr++)
+	{
+		out << *itr << endl;
 	}
 	out << "Vendas da Cadeia:" << endl << endl;
 	for(unsigned int i = 0; i<cadeia.vendas.size(); i++){
