@@ -94,15 +94,17 @@ void login()
 
 void criarFichaCliente()
 {
-	string nome, morada;
+	string nome, morada, distrito;
 	unsigned int noContribuinte;
 	cout << "Introduza o nome do cliente: ";
 	getline(cin, nome);
 	cout << "Introduza a morada do cliente: ";
 	getline(cin, morada);
+	cout << "Introduza o distrito do cliente: ";
+	getline(cin, distrito);
 	cout << "Introduza o numero de contribuinte do cliente: ";
 	inputHandler(noContribuinte);
-	Cliente* cl = new Cliente(nome, morada, noContribuinte);
+	Cliente* cl = new Cliente(nome, morada, noContribuinte, distrito);
 	cadeia->addCliente(cl);
 	cout << "Ficha de cliente criada com sucesso.\n";
 }
@@ -144,7 +146,7 @@ void verHistorialCliente()
 
 void contratarFuncionario(){
 
-	string nome, morada, password, nomeFarm;
+	string nome, morada, password, nomeFarm, distrito;
 	unsigned int noContribuinte, salario;
 	Farmacia* farm;
 	cout << "Introduza o nome da farmacia: ";
@@ -160,13 +162,15 @@ void contratarFuncionario(){
 	getline(cin, nome);
 	cout << "Introduza a morada do Funcionario: ";
 	getline(cin, morada);
+	cout << "Introduza o distrito do Funcionario: ";
+	getline(cin, distrito);
 	cout << "Introduza o numero de contribuinte do Funcionario: ";
 	inputHandler(noContribuinte);
 	cout << "Introduza a password do Funcionario: ";
 	getline(cin, password);
 	cout << "Introduza o salario do Funcionario: ";
 	inputHandler(salario);
-	Funcionario* newFunc = new Funcionario(nome, morada, noContribuinte, salario, password);
+	Funcionario* newFunc = new Funcionario(nome, morada, noContribuinte, distrito, salario, password);
 	newFunc->setFarmacia(farm);
 	cadeia->addFuncionario(newFunc);
 
@@ -666,12 +670,14 @@ void criarVenda(){
 		}while(criarFicha != "y" && criarFicha != "n");
 
 		if(criarFicha == "y"){
-			string nome, morada;
+			string nome, morada, distrito;
 			cout << "Introduza o nome do cliente: ";
 			getline(cin, nome);
 			cout << "Introduza a morada do cliente: ";
 			getline(cin, morada);
-			client = new Cliente(nome, morada, noContribuinte);
+			cout << "Introduza o distrito do cliente: ";
+			getline(cin, distrito);
+			client = new Cliente(nome, morada, noContribuinte, distrito);
 			cadeia->addCliente(client);
 			cout << "Ficha de cliente criada com sucesso.\n";
 		}
@@ -801,7 +807,7 @@ void gestaoVendas()
 
 void comeceCadeia(){
 	string nomeFarm, moradaFarm;
-	string nome, morada, password;
+	string nome, morada, password, distrito;
 	unsigned int noContribuinte, salario;
 	cout << "Compre a sua primeira Farmacia.\n";
 	cout << "Introduza o nome Farmacia: ";
@@ -818,13 +824,15 @@ void comeceCadeia(){
 	getline(cin, nome);
 	cout << "Introduza a morada do Funcionario: ";
 	getline(cin, morada);
+	cout << "Introduza o distrito do Funcionario: ";
+	getline(cin, distrito);
 	cout << "Introduza o numero de contribuinte do Funcionario: ";
 	inputHandler(noContribuinte);
 	cout << "Introduza a password do Funcionario: ";
 	getline(cin, password);
 	cout << "Introduza o salario do Funcionario: ";
 	inputHandler(salario);
-	Funcionario* newFunc = new Funcionario(nome, morada, noContribuinte, salario, password);
+	Funcionario* newFunc = new Funcionario(nome, morada, noContribuinte, distrito, salario, password);
 	newFunc->setCargo("Gerente");
 	newFunc->setFarmacia(farm);
 	farm->setGerente(newFunc->getNome());

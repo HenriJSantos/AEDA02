@@ -28,7 +28,7 @@ public:
 	 * @param salario Salario do funcionario
 	 * @param password Password do funcionario para acesso ao sistema
 	 */
-	Funcionario(string nome, string morada, unsigned int noContribuinte, unsigned int salario, string password);
+	Funcionario(string nome, string morada, unsigned int noContribuinte, string distrito, unsigned int salario, string password);
 
 	/**
 	 * @return Salario do funcionario

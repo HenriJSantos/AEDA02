@@ -16,6 +16,8 @@ private:
 	//Número de contribuinte da pessoa
 	unsigned int noContribuinte;
 
+	string distrito;
+
 public:
 	/**
 	 * @brief Construtor da classe "Pessoa"
@@ -23,7 +25,7 @@ public:
 	 * @param morada Morada da pessoa
 	 * @param noContribuinte Numero de contribuinte da pessoa
 	 */
-	Pessoa(string nome, string morada, unsigned int noContribuinte);
+	Pessoa(string nome, string morada, unsigned int noContribuinte, string distrito);
 	/**
 	 * @brief Retorna o nome da pessoa
 	 * @return Nome da pessoa
@@ -43,6 +45,7 @@ public:
 	 * @brief Altera o nome da pessoa
 	 * @param nome Nome da pessoa
 	 */
+	string getDistrito() const;
 	void setNome(string nome);
 	/**
 	 * @brief Altera a morada da pessoa
@@ -61,6 +64,8 @@ public:
 	 * @return "true" se o nome da pessoa "p1" for menor que o da pessoa "p2"
 	 * @return "false" caso contrario
 	 */
+	void setDistrito(string distrito);
+
 	static bool compare (Pessoa * p1, Pessoa * p2);
 };
 

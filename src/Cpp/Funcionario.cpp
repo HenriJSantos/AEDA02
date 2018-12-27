@@ -1,6 +1,6 @@
 #include "Funcionario.h"
 
-Funcionario::Funcionario(string nome, string morada, unsigned int noContribuinte, unsigned int salario, string password) : Pessoa(nome, morada, noContribuinte){
+Funcionario::Funcionario(string nome, string morada, unsigned int noContribuinte, string distrito, unsigned int salario, string password) : Pessoa(nome, morada, noContribuinte, distrito){
 	this->salario = salario;
 	this->farm = NULL;
 	this->cargo = "Funcionario";
@@ -45,6 +45,7 @@ std::ostream& operator<< (ostream & out, Funcionario & func){
 	out << "Nome do Funcionario: " << func.getNome() << endl;
 	out << "No. de Contribuinte: " << func.getNoContribuinte() << endl;
 	out << "Morada: " << func.getMorada() << endl;
+	out << "Distrito: " << func.getDistrito() << endl;
 	out << "Salario: " << func.getSalario() << endl;
 	out << "Farmacia de servico: " << func.getFarmacia()->getNome() << endl;
 	out << "Cargo: " << func.getCargo() << endl;

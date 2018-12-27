@@ -18,7 +18,7 @@ public:
 	 * @param morada Morada do cliente
 	 * @param noContribuinte Numero de contribuinte do cliente
 	 */
-	Cliente(string nome, string morada, unsigned int noContribuinte);
+	Cliente(string nome, string morada, unsigned int noContribuinte, string distrito);
 
 	/**
 	 * @brief Adiciona uma compra ao historial

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <set>
 #include "Farmacia.h"
 #include "Funcionario.h"
 #include "Cliente.h"
@@ -11,6 +12,33 @@
 #include "Hora.h"
 
 using namespace std;
+
+struct classcomp{
+
+	bool operator()(const Cliente * c1, const Cliente * c2) const{
+		if(c1->getDistrito() < c2->getDistrito()){
+			return true;
+		}
+		else{
+			if(c1->getDistrito() == c2->getDistrito()){
+				if(c1->getNome() < c2->getNome()){
+					return true;
+				}
+				else{
+					if(c1->getNoContribuinte() < c2->getNoContribuinte()){
+						return true;
+					}
+					else{
+						return false;
+					}
+				}
+			}
+			else{
+				return false;
+			}
+		}
+	}
+};
 
 class Cadeia {
 	//Nome da cadeia
@@ -20,7 +48,7 @@ class Cadeia {
 	//Vetor de apontadores para funcionarios pertencentes a cadeia
 	vector<Funcionario*> funcionarios;
 	//Vetor de apontadores para clientes da cadeia
-	vector<Cliente*> clientes;
+	set<Cliente*, classcomp> clientes;
 	//Vetor de apontadores para todas as vendas da cadeia
 	vector<Venda*> vendas;
 

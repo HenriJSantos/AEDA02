@@ -1,7 +1,6 @@
 #include "Cliente.h"
 
-
-Cliente::Cliente(string nome, string morada, unsigned int noContribuinte) : Pessoa(nome, morada, noContribuinte) {}
+Cliente::Cliente(string nome, string morada, unsigned int noContribuinte, string distrito) : Pessoa(nome, morada, noContribuinte, distrito) {}
 
 void Cliente::addCompra(Venda* compra) {
 	this->historial.push_back(compra);
@@ -29,5 +28,6 @@ std::ostream& operator<< (ostream & out, Cliente &cli){
 	out << "Nome: " << cli.getNome() << endl;
 	out << "No. de Contribuinte: " << cli.getNoContribuinte() << endl;
 	out << "Morada: " << cli.getMorada() << endl;
+	out << "Distrito: " << cli.getDistrito() << endl;
 	return out;
 }

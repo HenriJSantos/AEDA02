@@ -1,9 +1,10 @@
 #include "Pessoa.h"
 
-Pessoa::Pessoa(string nome, string morada, unsigned int noContribuinte) {
+Pessoa::Pessoa(string nome, string morada, unsigned int noContribuinte, string distrito) {
 	this->nome = nome;
 	this->morada = morada;
 	this->noContribuinte = noContribuinte;
+	this->distrito = distrito;
 }
 
 string Pessoa::getNome() const{
@@ -28,6 +29,14 @@ unsigned int Pessoa::getNoContribuinte() const{
 
 void Pessoa::setNoContribuinte(unsigned int No_Contribuinte) {
 	this->noContribuinte = noContribuinte;
+}
+
+string Pessoa::getDistrito() const{
+	return this->distrito;
+}
+
+void Pessoa::setDistrito(string distrito){
+	this->distrito = distrito;
 }
 
 bool Pessoa::compare (Pessoa * p1, Pessoa * p2)

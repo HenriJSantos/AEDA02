@@ -60,8 +60,7 @@ void Cadeia::rmFuncionario(unsigned int contribFunc)
 
 void Cadeia::addCliente(Cliente* cliente)
 {
-	this->clientes.push_back(cliente);
-	sort(this->clientes.begin(),this->clientes.end(), Pessoa::compare);
+	clientes.insert(cliente);
 }
 
 void Cadeia::rmCliente(unsigned int contribCliente)
@@ -212,6 +211,7 @@ void Cadeia::exportarCadeia()
 		out << "   Nome: " << this->funcionarios[i]->getNome() << endl;
 		out << "   No. Contribuinte: " << this->funcionarios[i]->getNoContribuinte() << endl;
 		out << "   Morada: " << this->funcionarios[i]->getMorada() << endl;
+		out << "   Distrito: " << this->funcionarios[i]->getDistrito() << endl;
 		out << "   Salário: " << this->funcionarios[i]->getSalario() << endl;
 		out << "   Farmácia: " << ((this->funcionarios[i]->getFarmacia() == NULL)? "Nenhuma" : this->funcionarios[i]->getFarmacia()->getNome()) << endl;
 		out << "   Cargo: " << this->funcionarios[i]->getCargo() << endl;
@@ -223,6 +223,7 @@ void Cadeia::exportarCadeia()
 		out << "   Nome: " << this->clientes[i]->getNome() << endl;
 		out << "   No. Contribuinte: " << this->clientes[i]->getNoContribuinte() << endl;
 		out << "   Morada: " << this->clientes[i]->getMorada() << endl;
+		out << "   Distrito: " << this->clientes[i]->getDistrito() << endl;
 		out << "   Historial:" << endl;
 		if(this->clientes.at(i)->getHistorial().size()==0){
 			out << "     Nenhuma compra efetuada" << endl;
@@ -286,6 +287,9 @@ Cadeia::Cadeia(string nomeFicheiro, string nome)
 			string morada = line.substr(11);
 
 			getline(in,line);
+			string distrito = line.substr(13);
+
+			getline(in,line);
 			unsigned int salario = stoi(line.substr(12));
 
 			getline(in,line);
@@ -302,7 +306,7 @@ Cadeia::Cadeia(string nomeFicheiro, string nome)
 			getline(in,line);
 			string password = line.substr(13);
 
-			Funcionario* func = new Funcionario(nome, morada, noContribuinte, salario, password);
+			Funcionario* func = new Funcionario(nome, morada, noContribuinte, distrito, salario, password);
 			func->setFarmacia(f);
 			func->setCargo(cargo);
 			this->addFuncionario(func);
@@ -321,7 +325,10 @@ Cadeia::Cadeia(string nomeFicheiro, string nome)
 			getline(in,line);
 			string morada = line.substr(11);
 
-			Cliente* cl = new Cliente(nome,morada,noContribuinte);
+			getline(in,line);
+			string distrito = line.substr(13);
+
+			Cliente* cl = new Cliente(nome,morada,noContribuinte, distrito);
 			this->addCliente(cl);
 
 			getline(in,line);
