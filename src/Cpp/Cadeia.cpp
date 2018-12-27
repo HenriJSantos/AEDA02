@@ -66,13 +66,13 @@ void Cadeia::addCliente(Cliente* cliente)
 void Cadeia::rmCliente(string nome, unsigned int contribCliente, string distrito)
 {
 	Cliente tempCliente(nome, "", contribCliente, distrito);
-	set<Cliente*, classcomp>::iterator itr;
+	set<Cliente*, clientLess>::iterator itr;
 	itr = clientes.find(&tempCliente);
 	if(itr == clientes.end())
 		throw(NaoExistePessoa(contribCliente, "Cliente"));
 	else
 	{
-		delete itr;
+		delete (*itr);
 		this->clientes.erase(itr);
 	}
 }
@@ -139,7 +139,7 @@ Funcionario* Cadeia::getFuncionarioComNome(string nome)
 
 Cliente* Cadeia::getClienteComNoContribuinte(unsigned int noContribuinte)
 {
-	set<Cliente*, classcomp>::iterator itr;
+	set<Cliente*, clientLess>::iterator itr;
 	for (itr = clientes.begin(); itr != clientes.end(); itr++)
 	{
 		if ((*itr)->getNoContribuinte() == noContribuinte)
@@ -164,7 +164,7 @@ Funcionario* Cadeia::getFuncionarioComNoContribuinte(unsigned int noContribuinte
 
 Cliente* Cadeia::getClienteComNome(string nome)
 {
-	set<Cliente*, classcomp>::iterator itr;
+	set<Cliente*, clientLess>::iterator itr;
 	for (itr = clientes.begin(); itr != clientes.end(); itr++)
 	{
 		if ((*itr)->getNome() == nome)
@@ -214,7 +214,7 @@ void Cadeia::exportarCadeia()
 		out << "   Password: " << this->funcionarios[i]->getPassword() << endl << endl;
 	}
 	out << "Clientes:\n";
-	set<Cliente*, classcomp>::iterator itr;
+	set<Cliente*, clientLess>::iterator itr;
 	for (itr = clientes.begin(); itr != clientes.end(); itr++)
 	{
 		out << "   Nome: " << (*itr)->getNome() << endl;
@@ -432,7 +432,7 @@ std::ostream& operator<< (ostream & out, Cadeia &cadeia){
 		out << *cadeia.funcionarios.at(i) << endl;
 	}
 	out << "Clientes da Cadeia:" << endl << endl;
-	set<Cliente*, classcomp>::iterator itr;
+	set<Cliente*, clientLess>::iterator itr;
 	for (itr = cadeia.clientes.begin(); itr != cadeia.clientes.end(); itr++)
 	{
 		out << *itr << endl;

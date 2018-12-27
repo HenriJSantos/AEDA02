@@ -112,10 +112,15 @@ void criarFichaCliente()
 void apagarFichaCliente()
 {
 	unsigned int noContribuinte;
+	string nome, distrito;
+	cout << "Introduza o nome do cliente: ";
+	getline(cin, nome);
+	cout << "Introduza o distrito do cliente: ";
+	getline(cin, distrito);
 	cout << "Introduza o numero de contribuinte do cliente: ";
 	inputHandler(noContribuinte);
 	try {
-		cadeia->rmCliente(noContribuinte);
+		cadeia->rmCliente(nome, noContribuinte, distrito);
 	} catch(NaoExistePessoa e) {
 		cout << "Nao existe nenhuma ficha de cliente com numero de contribuinte " << e.getContribuinte() << " associado.\n";
 		return;

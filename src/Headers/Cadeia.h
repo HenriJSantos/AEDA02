@@ -13,7 +13,7 @@
 
 using namespace std;
 
-struct classcomp{
+struct clientLess{
 	bool operator()(const Cliente * c1, const Cliente * c2) const
 	{
 		if(c1->getDistrito() != c2->getDistrito())
@@ -21,10 +21,6 @@ struct classcomp{
 		else if (c1->getNome() != c2->getNome())
 			return (c1->getNome() < c2->getNome());
 		else return (c1->getNoContribuinte() < c2->getNoContribuinte());
-	}
-	int operator()(const Cliente * c1, const Cliente * c2) const
-	{
-		return(c1->getDistrito() == c2->getDistrito() && c1->getNome() == c2->getNome() && c1->getNoContribuinte() == c2->getNoContribuinte());
 	}
 };
 
@@ -36,7 +32,7 @@ class Cadeia {
 	//Vetor de apontadores para funcionarios pertencentes a cadeia
 	vector<Funcionario*> funcionarios;
 	//Vetor de apontadores para clientes da cadeia
-	set<Cliente*, classcomp> clientes;
+	set<Cliente*, clientLess> clientes;
 	//Vetor de apontadores para todas as vendas da cadeia
 	vector<Venda*> vendas;
 
@@ -102,7 +98,7 @@ public:
 	 * @param contribCliente Numero de contribuinte do cliente a remover
 	 * @param distrito Distrito do cliente a remover
 	 */
-	void Cadeia::rmCliente(string nome, unsigned int contribCliente, string distrito)
+	void rmCliente(string nome, unsigned int contribCliente, string distrito);
 
 	/**
 	 * @brief Adiciona uma venda

@@ -34,7 +34,7 @@ std::ostream& operator<< (ostream & out, Cliente &cli){
 
 bool Cliente::operator== (const Cliente & c) const
 {
-	if(this->distrito == c.getDistrito() && this->nome == c.getNome() && this->noContribuinte == c.getNoContribuinte())
+	if(this->getDistrito() == c.getDistrito() && this->getNome() == c.getNome() && this->getNoContribuinte() == c.getNoContribuinte())
 		return true;
 	else
 		return false;
