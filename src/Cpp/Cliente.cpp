@@ -31,3 +31,20 @@ std::ostream& operator<< (ostream & out, Cliente &cli){
 	out << "Distrito: " << cli.getDistrito() << endl;
 	return out;
 }
+
+bool Cliente::operator== (const Cliente & c) const
+{
+	if(this->distrito == c.getDistrito() && this->nome == c.getNome() && this->noContribuinte == c.getNoContribuinte())
+		return true;
+	else
+		return false;
+}
+
+bool Cliente::operator< (const Cliente & c) const
+{
+	if(this->getDistrito() != c.getDistrito())
+		return (this->getDistrito() < c.getDistrito());
+	else if (this->getNome() != c.getNome())
+		return (this->getNome() < c.getNome());
+	else return (this->getNoContribuinte() < c.getNoContribuinte());
+}

@@ -14,7 +14,6 @@
 using namespace std;
 
 struct classcomp{
-
 	bool operator()(const Cliente * c1, const Cliente * c2) const
 	{
 		if(c1->getDistrito() != c2->getDistrito())
@@ -22,6 +21,10 @@ struct classcomp{
 		else if (c1->getNome() != c2->getNome())
 			return (c1->getNome() < c2->getNome());
 		else return (c1->getNoContribuinte() < c2->getNoContribuinte());
+	}
+	int operator()(const Cliente * c1, const Cliente * c2) const
+	{
+		return(c1->getDistrito() == c2->getDistrito() && c1->getNome() == c2->getNome() && c1->getNoContribuinte() == c2->getNoContribuinte());
 	}
 };
 
@@ -95,9 +98,11 @@ public:
 
 	/**
 	 * @brief Remove um cliente
+	 * @param nome Nome do cliente a remover
 	 * @param contribCliente Numero de contribuinte do cliente a remover
+	 * @param distrito Distrito do cliente a remover
 	 */
-	void rmCliente(unsigned int contribCliente);
+	void Cadeia::rmCliente(string nome, unsigned int contribCliente, string distrito)
 
 	/**
 	 * @brief Adiciona uma venda

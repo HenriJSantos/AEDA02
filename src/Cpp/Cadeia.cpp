@@ -63,21 +63,18 @@ void Cadeia::addCliente(Cliente* cliente)
 	clientes.insert(cliente);
 }
 
-void Cadeia::rmCliente(unsigned int contribCliente)
+void Cadeia::rmCliente(string nome, unsigned int contribCliente, string distrito)
 {
-	bool removed;
+	Cliente tempCliente(nome, "", contribCliente, distrito);
 	set<Cliente*, classcomp>::iterator itr;
-	for (itr = clientes.begin(); itr != clientes.end(); itr++)
-	{
-		if ((*itr)->getNoContribuinte() == contribCliente)
-		{
-			removed = true;
-			delete itr;
-			this->clientes.erase(itr);
-		}
-	}
-	if (!removed)
+	itr = clientes.find(&tempCliente);
+	if(itr == clientes.end())
 		throw(NaoExistePessoa(contribCliente, "Cliente"));
+	else
+	{
+		delete itr;
+		this->clientes.erase(itr);
+	}
 }
 
 void Cadeia::addVenda(Venda* venda)
@@ -167,16 +164,13 @@ Funcionario* Cadeia::getFuncionarioComNoContribuinte(unsigned int noContribuinte
 
 Cliente* Cadeia::getClienteComNome(string nome)
 {
-	int left = 0, right = this->clientes.size() - 1;
-	while (left <= right)
+	set<Cliente*, classcomp>::iterator itr;
+	for (itr = clientes.begin(); itr != clientes.end(); itr++)
 	{
-		int middle = (left + right) / 2;
-		if (this->clientes[middle]->getNome() < nome)
-			left = middle + 1;
-		else if (nome < this->clientes[middle]->getNome())
-			right= middle - 1;
-		else
-			return this->clientes[middle]; // encontrou
+		if ((*itr)->getNome() == nome)
+		{
+			return *itr;
+		}
 	}
 	throw(NaoExistePessoa(nome, "Cliente"));
 }

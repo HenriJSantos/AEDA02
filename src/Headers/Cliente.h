@@ -44,7 +44,8 @@ public:
 	 * @return Cliente e respetiva informacao
 	 */
 	friend std::ostream& operator<< (ostream & out, Cliente &cli);
-
+	bool operator== (const Cliente & c) const;
+	bool operator< (const Cliente & c) const;
 };
 
 class CompraInexistente
