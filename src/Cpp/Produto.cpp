@@ -17,8 +17,6 @@ Produto::Produto(string nome, float preco, string descricao) {
 	this->nome = nome;
 	this->preco = preco;
 	this->descricao = descricao;
-	produtos.push_back(this);
-	sort(produtos.begin(),produtos.end(), Produto::compare);
 }
 
 Produto::Produto(string codigo, string nome, float preco, string descricao) {
@@ -69,6 +67,10 @@ void Produto::setPreco(float preco){
 
 void Produto::setCodigo(string codigo){
 	this->codigo = codigo;
+}
+
+void Produto::setProdutos(vector<Produto*> prods){
+	produtos = prods;
 }
 
 vector<Produto*> Produto::getProdutos()

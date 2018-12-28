@@ -6,6 +6,10 @@ unsigned int Medicamento::proxCodigo = 1;
 Medicamento::Medicamento(string nome, float preco, string descricao) : Produto(nome, preco, descricao)
 {
 	this->setCodigo(criarCodigoValido());
+	vector<Produto*> temp = Produto::getProdutos();
+	temp.push_back(this);
+	sort(temp.begin(),temp.end(), Produto::compare);
+	Produto::setProdutos(temp);
 }
 
 Medicamento::Medicamento(string codigo, string nome, float preco, string descricao) : Produto(codigo, nome, preco, descricao) {}

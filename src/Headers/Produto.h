@@ -117,7 +117,16 @@ public:
 	 */
 	static Produto* getProdutoComCodigo(string codigo);
 
+	/**
+	 * @return Vetor de produtos da cadeia
+	 */
 	static vector<Produto*> getProdutos();
+
+	/**
+	 * @brief Altera o vetor de produtos
+	 * @param prods Novo vetor de produtos
+	 */
+	static void setProdutos(vector<Produto*> prods);
 
 	/**
 	 * @param nome Nome do produto

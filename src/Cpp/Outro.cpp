@@ -5,6 +5,10 @@ unsigned int Outro::proxCodigo = 1;
 Outro::Outro(string nome, float preco, string descricao) : Produto(nome, preco, descricao)
 {
 	this->setCodigo(this->criarCodigoValido());
+	vector<Produto*> temp = Produto::getProdutos();
+	temp.push_back(this);
+	sort(temp.begin(),temp.end(), Produto::compare);
+	Produto::setProdutos(temp);
 }
 
 Outro::Outro(string codigo, string nome, float preco, string descricao) : Produto(codigo, nome, preco, descricao) {}
