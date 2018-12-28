@@ -435,7 +435,7 @@ std::ostream& operator<< (ostream & out, Cadeia &cadeia){
 	set<Cliente*, clientLess>::iterator itr;
 	for (itr = cadeia.clientes.begin(); itr != cadeia.clientes.end(); itr++)
 	{
-		out << *itr << endl;
+		out << *(*itr) << endl;
 	}
 	out << "Vendas da Cadeia:" << endl << endl;
 	for(unsigned int i = 0; i<cadeia.vendas.size(); i++){
