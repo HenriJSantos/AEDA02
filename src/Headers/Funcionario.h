@@ -80,6 +80,9 @@ public:
 	 * @param func Funcionario
 	 * @return Funcionario e respetiva informacao
 	 */
+
+	bool operator== (const Funcionario & f) const;
+
 	friend std::ostream& operator<< (ostream & out, Funcionario & func);
 };
 

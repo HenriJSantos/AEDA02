@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <set>
+#include <unordered_set>
 #include "Farmacia.h"
 #include "Funcionario.h"
 #include "Cliente.h"
@@ -24,14 +25,27 @@ struct clientLess{
 	}
 };
 
+struct funcHash{
+
+	int operator()(const Funcionario* func) const{
+		return 0;
+	}
+
+	bool operator()(const Funcionario* func1, const Funcionario* func2) const{
+		return (*func1 == *func2);
+	}
+};
+
+typedef unordered_set<Funcionario*,funcHash,funcHash> funcTable;
+
 class Cadeia {
 	//Nome da cadeia
 	string nome;
 	//Vetor de apontadores para farmacias pertencentes a cadeia
 	vector<Farmacia*> farmacias;
-	//Vetor de apontadores para funcionarios pertencentes a cadeia
-	vector<Funcionario*> funcionarios;
-	//Vetor de apontadores para clientes da cadeia
+	//Unordered_set de apontadores para funcionarios pertencentes a cadeia
+	funcTable funcionarios;
+	//Set de apontadores para clientes da cadeia
 	set<Cliente*, clientLess> clientes;
 	//Vetor de apontadores para todas as vendas da cadeia
 	vector<Venda*> vendas;

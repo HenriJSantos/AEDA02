@@ -41,6 +41,14 @@ void Funcionario::setPassword(string password)
 	this->password = password;
 }
 
+bool Funcionario::operator== (const Funcionario & f) const
+{
+	if(this->getNome() == f.getNome() && this->getNoContribuinte() == f.getNoContribuinte())
+		return true;
+	else
+		return false;
+}
+
 std::ostream& operator<< (ostream & out, Funcionario & func){
 	out << "Nome do Funcionario: " << func.getNome() << endl;
 	out << "No. de Contribuinte: " << func.getNoContribuinte() << endl;

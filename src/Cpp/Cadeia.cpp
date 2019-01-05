@@ -38,24 +38,24 @@ void Cadeia::rmFarmacia(string nomeFarm) {
 
 void Cadeia::addFuncionario(Funcionario* func)
 {
-	this->funcionarios.push_back(func);
-	sort(this->funcionarios.begin(),this->funcionarios.end(), Pessoa::compare);
+	this->funcionarios.insert(func);
 }
 
 void Cadeia::rmFuncionario(unsigned int contribFunc)
 {
 	bool removed;
-	for (unsigned int i = 0; i < this->funcionarios.size(); i++)
+	funcTable::iterator itr;
+	for (itr = funcionarios.begin(); itr != funcionarios.end(); itr++)
 	{
-		if (this->funcionarios[i]->getNoContribuinte() == contribFunc)
+		if ((*itr)->getNoContribuinte() == contribFunc)
 		{
 			removed = true;
-			delete this->funcionarios[i];
-			this->funcionarios.erase(this->funcionarios.begin()+i);
+			delete (*itr);
+			itr = this->funcionarios.erase(itr);
 		}
 	}
 	if (!removed)
-		throw(NaoExistePessoa(contribFunc, "Funcionário"));
+		throw(NaoExistePessoa(contribFunc, "Funcionario"));
 }
 
 void Cadeia::addCliente(Cliente* cliente)
@@ -123,16 +123,11 @@ Farmacia* Cadeia::getFarmaciaComNome(string nomeFarm)
 
 Funcionario* Cadeia::getFuncionarioComNome(string nome)
 {
-	int left = 0, right = this->funcionarios.size() - 1;
-	while (left <= right)
-	{
-		int middle = (left + right) / 2;
-		if (this->funcionarios[middle]->getNome() < nome)
-			left = middle + 1;
-		else if (nome < this->funcionarios[middle]->getNome())
-			right= middle - 1;
-		else
-			return this->funcionarios[middle]; // encontrou
+	funcTable::iterator itr;
+	for (itr = funcionarios.begin(); itr != funcionarios.end(); itr++){
+		if((*itr)->getNome() == nome){
+			return *itr;
+		}
 	}
 	throw(NaoExistePessoa(nome, "Funcionário"));
 }
@@ -144,7 +139,7 @@ Cliente* Cadeia::getClienteComNoContribuinte(unsigned int noContribuinte)
 	{
 		if ((*itr)->getNoContribuinte() == noContribuinte)
 		{
-			return *itr;
+			return (*itr);
 		}
 	}
 	throw(NaoExistePessoa(noContribuinte, "Cliente"));
@@ -152,11 +147,12 @@ Cliente* Cadeia::getClienteComNoContribuinte(unsigned int noContribuinte)
 
 Funcionario* Cadeia::getFuncionarioComNoContribuinte(unsigned int noContribuinte)
 {
-	for (unsigned int i = 0; i < this->funcionarios.size(); i++)
+	funcTable::iterator itr;
+	for (itr = funcionarios.begin(); itr != funcionarios.end(); itr++)
 	{
-		if (this->funcionarios[i]->getNoContribuinte() == noContribuinte)
+		if ((*itr)->getNoContribuinte() == noContribuinte)
 		{
-			return this->funcionarios[i];
+			return (*itr);
 		}
 	}
 	throw(NaoExistePessoa(noContribuinte, "Funcionario"));
@@ -179,9 +175,10 @@ vector<Funcionario* > Cadeia::getFuncionariosDaFarmacia(Farmacia* farm){
 
 	vector<Funcionario* > funcs;
 
-	for(unsigned int i = 0; i < this->funcionarios.size();i++){
-		if(funcionarios.at(i)->getFarmacia() == farm){
-			funcs.push_back(funcionarios.at(i));
+	funcTable::iterator itr;
+	for (itr = funcionarios.begin(); itr != funcionarios.end(); itr++){
+		if((*itr)->getFarmacia() == farm){
+			funcs.push_back((*itr));
 		}
 	}
 	return funcs;
@@ -202,16 +199,17 @@ void Cadeia::exportarCadeia()
 		out << "      Gerente: " << this->farmacias[i]->getGerente() << endl << endl;
 	}
 	out << "Funcionarios:\n";
-	for (unsigned int i = 0; i < this->funcionarios.size(); i++)
+	funcTable::iterator funcItr;
+	for (funcItr = funcionarios.begin(); funcItr != funcionarios.end(); funcItr++)
 	{
-		out << "   Nome: " << this->funcionarios[i]->getNome() << endl;
-		out << "   No. Contribuinte: " << this->funcionarios[i]->getNoContribuinte() << endl;
-		out << "   Morada: " << this->funcionarios[i]->getMorada() << endl;
-		out << "   Distrito: " << this->funcionarios[i]->getDistrito() << endl;
-		out << "   Salário: " << this->funcionarios[i]->getSalario() << endl;
-		out << "   Farmácia: " << ((this->funcionarios[i]->getFarmacia() == NULL)? "Nenhuma" : this->funcionarios[i]->getFarmacia()->getNome()) << endl;
-		out << "   Cargo: " << this->funcionarios[i]->getCargo() << endl;
-		out << "   Password: " << this->funcionarios[i]->getPassword() << endl << endl;
+		out << "   Nome: " << (*funcItr)->getNome() << endl;
+		out << "   No. Contribuinte: " << (*funcItr)->getNoContribuinte() << endl;
+		out << "   Morada: " << (*funcItr)->getMorada() << endl;
+		out << "   Distrito: " << (*funcItr)->getDistrito() << endl;
+		out << "   Salário: " << (*funcItr)->getSalario() << endl;
+		out << "   Farmácia: " << (((*funcItr)->getFarmacia() == NULL)? "Nenhuma" : (*funcItr)->getFarmacia()->getNome()) << endl;
+		out << "   Cargo: " << (*funcItr)->getCargo() << endl;
+		out << "   Password: " << (*funcItr)->getPassword() << endl << endl;
 	}
 	out << "Clientes:\n";
 	set<Cliente*, clientLess>::iterator itr;
@@ -407,7 +405,7 @@ Cadeia::~Cadeia()
 
 	while(!this->funcionarios.empty())
 	{
-		delete this->funcionarios[0];
+		delete *(this->funcionarios.begin());
 		this->funcionarios.erase(this->funcionarios.begin());
 	}
 
@@ -428,8 +426,9 @@ std::ostream& operator<< (ostream & out, Cadeia &cadeia){
 		out << *cadeia.farmacias.at(i) << endl;
 	}
 	out << "Funcionarios da Cadeia:" << endl << endl;
-	for(unsigned int i = 0; i<cadeia.funcionarios.size(); i++){
-		out << *cadeia.funcionarios.at(i) << endl;
+	funcTable::iterator funcItr;
+	for(funcItr = cadeia.funcionarios.begin(); funcItr != cadeia.funcionarios.end(); funcItr++){
+		out << *(*funcItr) << endl;
 	}
 	out << "Clientes da Cadeia:" << endl << endl;
 	set<Cliente*, clientLess>::iterator itr;
