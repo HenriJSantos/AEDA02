@@ -80,10 +80,13 @@ vector<Produto*> Produto::getProdutos()
 
 void Produto::removeProdutoComCodigo(string codigo){
 
+	//Produto *prod = Produto::getProdutoComCodigo(codigo);
+
 	for(unsigned int i = 0; i < produtos.size(); i++){
 		if(produtos.at(i)->getCodigo() == codigo){
-			delete produtos.at(i);
+			//delete produtos.at(i);
 			produtos.erase(produtos.begin()+i);
+			//delete prod;
 			return;
 		}
 	}

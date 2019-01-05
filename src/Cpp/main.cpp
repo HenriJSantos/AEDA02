@@ -190,13 +190,15 @@ void despedirFuncionario(){
 	inputHandler(noContribuinte);
 	try {
 		newFunc = cadeia->getFuncionarioComNoContribuinte(noContribuinte);
-		newFarm = newFunc->getFarmacia();
-		newFarm->setGerente("Nenhum");
-		cadeia->rmFuncionario(noContribuinte);
 	} catch(NaoExistePessoa e) {
 		cout << "Nao existe nenhum Funcionario com numero de contribuinte " << e.getContribuinte() << " associado.\n";
 		return;
 	}
+	newFarm = newFunc->getFarmacia();
+	if(newFunc->getCargo() == "Gerente"){
+		newFarm->setGerente("Nenhum");
+	}
+	newFunc->setFarmacia(NULL);
 	cout << "Funcionario despedido com sucesso.";
 }
 
@@ -223,8 +225,12 @@ void transferirFuncionario(){
 		return;
 	}
 
-
+	if(newFunc->getCargo() == "Gerente"){
+		newFunc->getFarmacia()->setGerente("Nenhum");
+		newFunc->setCargo("Funcionario");
+	}
 	newFunc->setFarmacia(farm);
+
 
 	cout << "Funcionario transferido com sucesso.";
 
