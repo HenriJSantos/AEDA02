@@ -125,7 +125,7 @@ void apagarFichaCliente()
 		cout << "Nao existe nenhuma ficha de cliente com numero de contribuinte " << e.getContribuinte() << " associado.\n";
 		return;
 	}
-	cout << "Ficha de cliente apagada com sucesso.";
+	cout << "Ficha de cliente apagada com sucesso." << endl;
 }
 
 void verHistorialCliente()
@@ -233,7 +233,7 @@ void transferirFuncionario(){
 	newFunc->setFarmacia(farm);
 
 
-	cout << "Funcionario transferido com sucesso.";
+	cout << "Funcionario transferido com sucesso." << endl;
 
 }
 
@@ -260,7 +260,7 @@ void promoverFuncionario(){
 
 	newFunc->setCargo("Gerente");
 	farm->setGerente(newFunc->getNome());
-	cout << "Funcionario promovido com sucesso.\n";
+	cout << "Funcionario promovido com sucesso.\n" << endl;
 }
 
 void gestaoClientes()
