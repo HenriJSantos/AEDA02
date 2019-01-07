@@ -199,7 +199,8 @@ void despedirFuncionario(){
 		newFarm->setGerente("Nenhum");
 	}
 	newFunc->setFarmacia(NULL);
-	cout << "Funcionario despedido com sucesso.";
+	newFunc->setCargo("Nenhum");
+	cout << "Funcionario despedido com sucesso." << endl;
 }
 
 void transferirFuncionario(){

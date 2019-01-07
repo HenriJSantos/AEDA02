@@ -55,7 +55,12 @@ std::ostream& operator<< (ostream & out, Funcionario & func){
 	out << "Morada: " << func.getMorada() << endl;
 	out << "Distrito: " << func.getDistrito() << endl;
 	out << "Salario: " << func.getSalario() << endl;
-	out << "Farmacia de servico: " << func.getFarmacia()->getNome() << endl;
+	if(func.getFarmacia()!=NULL){
+		out << "Farmacia de servico: " << func.getFarmacia()->getNome() << endl;
+	}
+	else{
+		out << "Farmacia de servico: " << "Nenhuma" << endl;
+	}
 	out << "Cargo: " << func.getCargo() << endl;
 
 	return out;
