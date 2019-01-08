@@ -4,6 +4,7 @@ var searchData=
   ['receitainexistente',['ReceitaInexistente',['../class_receita_inexistente.html#a58cfd059378f3770a6b2102161c2ea27',1,'ReceitaInexistente']]],
   ['removeprodutocomcodigo',['removeProdutoComCodigo',['../class_produto.html#ae4e3db43c0e9e42590e81b50ccf0761b',1,'Produto']]],
   ['removereceitacomno',['removeReceitaComNo',['../class_receita.html#ae1bc0f72ae1c87228c4d220b98ca650d',1,'Receita']]],
+  ['restorestock',['restoreStock',['../class_farmacia.html#a3277d940ef4a74228b26d5b35c9a5f6b',1,'Farmacia']]],
   ['rmcliente',['rmCliente',['../class_cadeia.html#aa72dea9028ebde15cdce59e192bc3ccc',1,'Cadeia']]],
   ['rmcompra',['rmCompra',['../class_cliente.html#a984d5d135e1aa99c1236d7a3ee3d0750',1,'Cliente']]],
   ['rmfarmacia',['rmFarmacia',['../class_cadeia.html#a17f31b24ca40b6cd3ea0f32b375b3b22',1,'Cadeia']]],

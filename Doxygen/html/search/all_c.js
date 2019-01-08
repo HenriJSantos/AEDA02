@@ -7,7 +7,7 @@ var searchData=
   ['preco',['preco',['../class_produto.html#a9e1023fcf261a8fba7620ee61654163a',1,'Produto']]],
   ['precunid',['precUnid',['../class_item_venda.html#ad6fd262065ee0fcdef05154ff20b23f7',1,'ItemVenda']]],
   ['printreceita',['printReceita',['../class_receita.html#aa9dc5e2490e715a7bf72c7e61d614b8e',1,'Receita']]],
-  ['prod',['prod',['../class_item_venda.html#a50b7c468390d9bcb5a4a58210c1239aa',1,'ItemVenda::prod()'],['../class_stock_item.html#aa5bd8a8c1e0a1ae0f95a2fa6bb9481e4',1,'StockItem::prod()']]],
+  ['prod',['prod',['../class_item_venda.html#a50b7c468390d9bcb5a4a58210c1239aa',1,'ItemVenda::prod()'],['../class_stock_item.html#aa5bd8a8c1e0a1ae0f95a2fa6bb9481e4',1,'StockItem::prod()'],['../class_stock_insuficiente.html#a12e69832d33425df41cc8b0b454bbb33',1,'StockInsuficiente::prod()']]],
   ['produto',['Produto',['../class_produto.html',1,'Produto'],['../class_produto.html#adf9646a1d232493e1700637edb856fb6',1,'Produto::Produto(string nome, float preco, string descricao)'],['../class_produto.html#a611cc8c0833a46a66e4e5f6daf5d6bab',1,'Produto::Produto(string codigo, string nome, float preco, string descricao)']]],
   ['produto_2eh',['Produto.h',['../_produto_8h.html',1,'']]],
   ['produtoinexistente',['ProdutoInexistente',['../class_produto_inexistente.html',1,'ProdutoInexistente'],['../class_produto_inexistente.html#a6b78c4ce52de69d49852be844798317b',1,'ProdutoInexistente::ProdutoInexistente()']]],

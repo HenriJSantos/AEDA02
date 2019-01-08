@@ -13,13 +13,21 @@ using namespace std;
 class Farmacia {
 
 private:
-	//Nome da farmácia
+	/**
+	 * @brief Nome da farmacia
+	 */
 	string nome;
-	//Morada da farmácia
+	/**
+	 * @brief Morada da farmacia
+	 */
 	string morada;
-	//Gerente da farmácia
+	/**
+	 * @brief Gerente da farmacia
+	 */
 	string gerente;
-	//Stock
+	/**
+	 * @brief Fila de prioridade com o stock de produtos da farmacia
+	 */
 	priority_queue<StockItem> stock;
 
 public:
@@ -78,8 +86,8 @@ public:
 	 * @return Farmacia e respetiva informacao
 	 */
 	friend std::ostream& operator<< (ostream & out, Farmacia & farm);
-	void addProductToStock(Produto * prod);
 	void restoreStock(unsigned int min);
+	void addProductToStock(Produto * prod);
 	vector<StockItem> stockWithLessThan(unsigned int ammount);
 	void vendeItem(Produto * prod, unsigned int quant);
 };

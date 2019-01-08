@@ -37,6 +37,7 @@ var searchData=
   ['getpassword',['getPassword',['../class_funcionario.html#a295d9311d3e726dcdc4f969df44cd3b6',1,'Funcionario']]],
   ['getpreco',['getPreco',['../class_produto.html#afe16477be14329f4865ed1cf0f295a45',1,'Produto']]],
   ['getprecunid',['getPrecUnid',['../class_item_venda.html#a734eee95127f804c327af5ddb524936b',1,'ItemVenda']]],
+  ['getprod',['getProd',['../class_stock_insuficiente.html#a101a45985e252df0341c834e16a1e67c',1,'StockInsuficiente']]],
   ['getprodutocomcodigo',['getProdutoComCodigo',['../class_produto.html#a1009614f605b9feb4c09d62997343f84',1,'Produto']]],
   ['getprodutocomnome',['getProdutoComNome',['../class_produto.html#a87d9e35ecb7d050031aa531e48c9bd8d',1,'Produto']]],
   ['getprodutos',['getProdutos',['../class_produto.html#aeca4bd421af0f95faa029fe13f62ca7d',1,'Produto::getProdutos()'],['../class_receita.html#a56f8948074c16ab4feba1498aea24ccd',1,'Receita::getProdutos()']]],
