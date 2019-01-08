@@ -31,6 +31,10 @@ public:
 	 */
 	unsigned int getQuantity() const;
 	/**
+	 * @return Produto do item
+	 */
+	Produto * getProduct();
+	/**
 	 * @brief Adiciona a quantidade dada como parametro ao stock
 	 * @param quant Quantidade de produto (unidades em stock)
 	 */

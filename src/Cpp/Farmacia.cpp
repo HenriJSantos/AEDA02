@@ -52,24 +52,56 @@ void Farmacia::addProductToStock(Produto * prod)
 	stock.push(si);
 }
 
-void Farmacia::restoreStock(unsigned int min)
+void Farmacia::vendeItem(Produto * prod, unsigned int quant)
+{
+	vector<StockItem> temp;
+	bool found = false;
+
+	while(!stock.empty())
+	{
+		StockItem copy = stock.top();
+		stock.pop();
+		if(copy.getProduct() == prod)
+		{
+			copy.takeQuantity(quant);
+			found = true;
+			temp.push_back(copy);
+			break;
+		}
+		else
+		{
+			temp.push_back(copy);
+		}
+	}
+
+	for (unsigned int i = 0; i < temp.size(); i++)
+	{
+		stock.push(temp[i]);
+	}
+
+	if(!found)
+		throw(StockInexistente(prod));
+}
+
+void Farmacia::restoreStock(unsigned int ammount)
 {
 	vector<StockItem> temp;
 
 	while(!stock.empty())
 	{
 		StockItem copy = stock.top();
-		stock.pop();
-		if(copy.getQuantity() < min)
+		if(copy.getQuantity() < ammount)
 		{
-			copy.setQuantity(min);
-			temp.push_back(copy);
+			temp.push_back(stock.top());
+			stock.pop();
 		}
 		else
-		{
-			temp.push_back(copy);
 			break;
-		}
+	}
+
+	for (unsigned int i = 0; i < temp.size(); i++)
+	{
+		stock.push(temp[i]);
 	}
 
 	for (unsigned int i = 0; i < temp.size(); i++)

@@ -17,6 +17,11 @@ unsigned int StockItem::getQuantity() const
 	return this->quant;
 }
 
+Produto * StockItem::getProduct()
+{
+	return this->prod;
+}
+
 
 void StockItem::addQuantity(unsigned int quant)
 {

@@ -78,9 +78,10 @@ public:
 	 * @return Farmacia e respetiva informacao
 	 */
 	friend std::ostream& operator<< (ostream & out, Farmacia & farm);
-	void Farmacia::addProductToStock(Produto * prod);
-	void Farmacia::restoreStock(unsigned int min);
-	vector<StockItem> Farmacia::stockWithLessThan(unsigned int ammount);
+	void addProductToStock(Produto * prod);
+	void restoreStock(unsigned int min);
+	vector<StockItem> stockWithLessThan(unsigned int ammount);
+	void vendeItem(Produto * prod, unsigned int quant);
 };
 
 #endif
