@@ -716,6 +716,16 @@ void gestaoProdutos()
 void criarVenda(){
 	Cliente* client;
 	Venda* venda;
+	Farmacia* farm;
+	string nomeFarm;
+	cout << "Introduza o nome da farmacia que quer gerir: ";
+	inputHandler(nomeFarm);
+	try{
+		farm = cadeia->getFarmaciaComNome(nomeFarm);
+	} catch (NaoExisteFarmacia) {
+		cout << "Farmácia Inexistente.";
+		return;
+	}
 	string  criarFicha;
 	unsigned int noContribuinte;
 	cout << "Introduza o numero de contribuinte do cliente: ";
@@ -783,12 +793,21 @@ void criarVenda(){
 				prod = Produto::getProdutoComCodigo(codigo);
 			}catch(ProdutoInexistente e){
 				cout << "Nao existe produto com codigo  " << e.getCodigo() << "\n";
-				return;
+				continue;
 			}
 
 			cout << "Introduza o numero de produtos que pretende comprar: ";
 			inputHandler(quant);
 
+			try{
+			farm->vendeItem(prod, quant);
+			} catch (StockInexistente) {
+				cout << "Nao temos esse produto em stock\n";
+				continue;
+			} catch (StockInsuficiente)
+			{
+				cout << "Nao temos suficiente desse produto em stock\n";
+			}
 			venda->addItem(prod, quant);
 
 			cout << "Deseja adicionar mais itens a venda?(y/n)";
@@ -822,6 +841,14 @@ void criarVenda(){
 			cout << "Introduza o numero de produtos que pretende comprar: ";
 			inputHandler(quant);
 
+			try{
+				farm->vendeItem(prod, quant);
+			} catch (StockInexistente) {
+				cout << "Nao temos esse produto em stock\n";
+				continue;
+			} catch (StockInsuficiente) {
+				cout << "Nao temos suficiente desse produto em stock\n";
+			}
 			venda->addItem(prod, quant);
 
 			cout << "Deseja adicionar mais itens a venda?(y/n)";

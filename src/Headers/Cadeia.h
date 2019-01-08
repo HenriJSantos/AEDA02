@@ -161,7 +161,7 @@ public:
 	 * @param nomeFarm Nome da farmacia
 	 * @return Apontador para a farmacia com nome "nomeFarm"
 	 */
-	Farmacia* getFarmaciaComNome(string nomeFarm);
+	Farmacia * getFarmaciaComNome(string nomeFarm);
 
 	/**
 	 * @param nome Nome do funcionario
