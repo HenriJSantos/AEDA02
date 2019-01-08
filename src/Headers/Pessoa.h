@@ -42,11 +42,15 @@ public:
 	 * @return Numero de contribuinte da pessoa
 	 */
 	unsigned int getNoContribuinte() const;
+
+	/**
+	 * @return Distrito da pessoa
+	 */
+	string getDistrito() const;
 	/**
 	 * @brief Altera o nome da pessoa
 	 * @param nome Nome da pessoa
 	 */
-	string getDistrito() const;
 	void setNome(string nome);
 	/**
 	 * @brief Altera a morada da pessoa
@@ -58,6 +62,13 @@ public:
 	 * @param noContribuinte Numero de contribuinte da pessoa
 	 */
 	void setNoContribuinte(unsigned int noContribuinte);
+
+	/**
+	 * @brief Altera o distrito da pessoa
+	 * @param distrito Distrito da pessoa
+	 */
+	void setDistrito(string distrito);
+
 	/**
 	 * @brief Usada para colocar as pessoas por ordem crescente
 	 * @param p1 Apontador para a primeira pessoa a comparar
@@ -65,8 +76,6 @@ public:
 	 * @return "true" se o nome da pessoa "p1" for menor que o da pessoa "p2"
 	 * @return "false" caso contrario
 	 */
-	void setDistrito(string distrito);
-
 	static bool compare (Pessoa * p1, Pessoa * p2);
 };
 
