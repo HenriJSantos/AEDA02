@@ -869,6 +869,15 @@ void gestaoVendas()
 }
 
 void adicionarStock(){
+	Farmacia* farm;
+	string nomeFarm;
+	cout << "Introduza o nome da farmacia: ";
+	getline(cin, nomeFarm);
+	try {
+	} catch(NaoExisteFarmacia e) {
+		cout << "Nao existe nenhuma farmacia com nome " << e.getNome() << " associado.\n";
+		return;
+	}
 
 }
 

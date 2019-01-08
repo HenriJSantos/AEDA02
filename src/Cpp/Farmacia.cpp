@@ -142,18 +142,23 @@ void Farmacia::addStock(Produto* prod, unsigned int quant){
 
 	while(!tempStock.empty()){
 		item = tempStock.top();
-		removedItems.push_back(item);
 		tempStock.pop();
 		if(item.getProduct() == prod){
 			item.addQuantity(quant);
 			added = true;
+			removedItems.push_back(item);
 			break;
+		}
+		else{
+			removedItems.push_back(item);
 		}
 	}
 
 	if(!added){
 		throw(StockInexistente(prod));
 	}
-
-
+	for(unsigned int i = 0; i < removedItems.size(); i++){
+		tempStock.push(removedItems.at(i));
+	}
+	stock = tempStock;
 }
