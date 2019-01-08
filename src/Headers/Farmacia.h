@@ -13,13 +13,21 @@ using namespace std;
 class Farmacia {
 
 private:
-	//Nome da farmácia
+	/**
+	 * @brief Nome da farmacia
+	 */
 	string nome;
-	//Morada da farmácia
+	/**
+	 * @brief Morada da farmacia
+	 */
 	string morada;
-	//Gerente da farmácia
+	/**
+	 * @brief Gerente da farmacia
+	 */
 	string gerente;
-	//Stock
+	/**
+	 * @brief Fila de prioridade com o stock de produtos da farmacia
+	 */
 	priority_queue<StockItem> stock;
 
 public:
@@ -78,8 +86,23 @@ public:
 	 * @return Farmacia e respetiva informacao
 	 */
 	friend std::ostream& operator<< (ostream & out, Farmacia & farm);
+	/**
+	 * @brief Adiciona o produto a fila de prioridade de stock
+	 * @param prod Apontador para o produto a adicionar
+	 */
 	void Farmacia::addProductToStock(Produto * prod);
+
+	/**
+	 * @brief Garante que o stock de cada produto farmacia tem o valor minimo indicado
+	 * @param min Minimo de stock da farmacia
+	 */
 	void Farmacia::restoreStock(unsigned int min);
+
+	/**
+	 * @brief Garante que o stock de cada produto da farmacia tem o valor maximo indicado
+	 * @param ammount Maximo de stock da farmacia
+	 * @return Vetor cujo stock de cada produto nao ultrapassa o valor "ammount"
+	 */
 	vector<StockItem> Farmacia::stockWithLessThan(unsigned int ammount);
 };
 

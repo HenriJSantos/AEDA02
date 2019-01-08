@@ -5,7 +5,7 @@ var searchData=
   ['cadeiainexistente',['CadeiaInexistente',['../class_cadeia_inexistente.html',1,'CadeiaInexistente'],['../class_cadeia_inexistente.html#a0de65b5656871237b02a5c43959e9def',1,'CadeiaInexistente::CadeiaInexistente()']]],
   ['cargo',['cargo',['../class_funcionario.html#a8c058dd3ad5ed985410f12c65ce5a058',1,'Funcionario']]],
   ['categoria',['categoria',['../class_overflow_codigos.html#a883fb73205371d58f0a07a94734129f0',1,'OverflowCodigos']]],
-  ['cliente',['Cliente',['../class_cliente.html',1,'Cliente'],['../class_cliente.html#a1a357f98571136cef80667510379d5a6',1,'Cliente::Cliente()'],['../class_receita.html#afe2682041cd97fe0f1741643aae6103e',1,'Receita::cliente()']]],
+  ['cliente',['Cliente',['../class_cliente.html',1,'Cliente'],['../class_receita.html#afe2682041cd97fe0f1741643aae6103e',1,'Receita::cliente()'],['../class_cliente.html#a1a357f98571136cef80667510379d5a6',1,'Cliente::Cliente()']]],
   ['cliente_2eh',['Cliente.h',['../_cliente_8h.html',1,'']]],
   ['clientes',['clientes',['../class_cadeia.html#a5e5b5cf6ab50ea91b0327a6b9509471b',1,'Cadeia']]],
   ['clientless',['clientLess',['../structclient_less.html',1,'']]],
