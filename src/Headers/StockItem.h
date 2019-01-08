@@ -40,7 +40,7 @@ public:
 	 * @param quant Quantidade de produto (unidades em stock)
 	 * @return "true" se a quantidade existente for igual ao superior a dada como parametro, "false" caso contrario
 	 */
-	bool takeQuantity(unsigned int quant);
+	void takeQuantity(unsigned int quant);
 
 	/**
 	 * @brief Overload do operador "<" para comparar o stock na fila de prioridade
@@ -48,6 +48,23 @@ public:
 	 * @return "true" se o stock existente for menor que o stock de "si"
 	 */
 	bool operator< (const StockItem & si) const;
+};
+
+class StockInsuficiente {
+	/**
+	 * @brief Identificador do produto
+	 */
+	Produto * prod;
+public:
+	/**
+	 * @brief Construtor da classe "StockInsuficiente" (excecao)
+	 * @param prod Identificador do produto sem stock suficiente
+	 */
+	StockInsuficiente(Produto * prod) {this->prod = prod;}
+	/**
+	 * @return Identificador do produto inexistente
+	 */
+	Produto * getProd() {return this->prod;}
 };
 
 

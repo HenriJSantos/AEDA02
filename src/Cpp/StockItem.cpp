@@ -23,15 +23,15 @@ void StockItem::addQuantity(unsigned int quant)
 	this->quant += quant;
 }
 
-bool StockItem::takeQuantity(unsigned int quant)
+void StockItem::takeQuantity(unsigned int quant)
 {
 	if (this->quant >= quant)
 	{
 		this->quant -= quant;
-		return true;
+		return;
 	}
 	else
-		return false;
+		throw(StockInsuficiente(this->prod));
 }
 
 bool StockItem::operator< (const StockItem & si) const
