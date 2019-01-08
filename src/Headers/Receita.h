@@ -11,10 +11,25 @@ using namespace std;
 class Receita {
 
 private:
+	/**
+	 * @brief Vetor de apontadores para receitas validas
+	 */
 	static vector<Receita*> receitasValidas;
+	/**
+	 * @brief Numero da receita
+	 */
 	string noReceita;
+	/**
+	 * @brief Apontador para um cliente
+	 */
 	Cliente* cliente;
+	/**
+	 * @brief Nome do medico
+	 */
 	string nomeMedico;
+	/**
+	 * @brief Vetor de apontadores para os produtos
+	 */
 	vector<Produto*> produtos;
 public:
 	/**
@@ -72,6 +87,9 @@ public:
 
 class ReceitaInexistente
 {
+	/**
+	 * @brief Numero da receita
+	 */
 	string noReceita;
 public:
 	/**

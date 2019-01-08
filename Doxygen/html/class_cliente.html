@@ -96,8 +96,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0083ee8288d25c60e2dd665b3f6ec254"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_venda.html">Venda</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cliente.html#a0083ee8288d25c60e2dd665b3f6ec254">getHistorial</a> ()</td></tr>
 <tr class="separator:a0083ee8288d25c60e2dd665b3f6ec254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a257f467fe3f14c95f474245740fda2f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cliente.html#a257f467fe3f14c95f474245740fda2f3">operator==</a> (const <a class="el" href="class_cliente.html">Cliente</a> &amp;c) const</td></tr>
+<tr class="memdesc:a257f467fe3f14c95f474245740fda2f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload do operator == para comparar dois clientes.  <a href="#a257f467fe3f14c95f474245740fda2f3">More...</a><br /></td></tr>
 <tr class="separator:a257f467fe3f14c95f474245740fda2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7968126928540190a2987ea31c437a1e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cliente.html#a7968126928540190a2987ea31c437a1e">operator&lt;</a> (const <a class="el" href="class_cliente.html">Cliente</a> &amp;c) const</td></tr>
+<tr class="memdesc:a7968126928540190a2987ea31c437a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload do operator &lt; para comparar dois clientes.  <a href="#a7968126928540190a2987ea31c437a1e">More...</a><br /></td></tr>
 <tr class="separator:a7968126928540190a2987ea31c437a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_pessoa"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_pessoa')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_pessoa.html">Pessoa</a></td></tr>
 <tr class="memitem:a31ab38912a9f5b7e9a587eccb1fc1ff0 inherit pub_methods_class_pessoa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pessoa.html#a31ab38912a9f5b7e9a587eccb1fc1ff0">Pessoa</a> (string <a class="el" href="class_pessoa.html#ad4e88b8f3499405a7a03df648857c338">nome</a>, string <a class="el" href="class_pessoa.html#a73466544a08a78752596df919867db6c">morada</a>, unsigned int <a class="el" href="class_pessoa.html#a4e011c318b963ff985da78887c3c4592">noContribuinte</a>, string <a class="el" href="class_pessoa.html#a32e40fa5fcd23204db27a00d39d29600">distrito</a>)</td></tr>
@@ -129,6 +131,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a60cca0bd319ab33bfda61b14a2016285"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_venda.html">Venda</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cliente.html#a60cca0bd319ab33bfda61b14a2016285">historial</a></td></tr>
+<tr class="memdesc:a60cca0bd319ab33bfda61b14a2016285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vetor que guarda as compras realizadas pela pessoa.  <a href="#a60cca0bd319ab33bfda61b14a2016285">More...</a><br /></td></tr>
 <tr class="separator:a60cca0bd319ab33bfda61b14a2016285"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -257,6 +260,15 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Overload do operator &lt; para comparar dois clientes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="class_cliente.html">Cliente</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True se for menor que c, false caso contrario </dd></dl>
+
 </div>
 </div>
 <a id="a257f467fe3f14c95f474245740fda2f3"></a>
@@ -274,6 +286,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Overload do operator == para comparar dois clientes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="class_cliente.html">Cliente</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True se os clientes forem iguais, false caso contrario </dd></dl>
 
 </div>
 </div>
@@ -370,6 +391,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Vetor que guarda as compras realizadas pela pessoa. </p>
 
 </div>
 </div>

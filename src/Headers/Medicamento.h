@@ -11,7 +11,9 @@ using namespace std;
 class Medicamento : public Produto {
 
 private:
-	//"proxCodigo" será o código a atribuir ao medicamento
+	/**
+	 * @brief Codigo a atribuir ao medicamento
+	 */
 	static unsigned int proxCodigo;
 
 public:

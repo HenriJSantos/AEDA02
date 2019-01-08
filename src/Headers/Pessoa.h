@@ -9,13 +9,21 @@ using namespace std;
 class Pessoa {
 
 private:
-	//Nome da pessoa
+	/**
+	 * @return Nome da pessoa
+	 */
 	string nome;
-	//Morada da pessoa
+	/**
+	 * @return Morada da pessoa
+	 */
 	string morada;
-	//Número de contribuinte da pessoa
+	/**
+	 * @return Numero de contribuinte da pessoa
+	 */
 	unsigned int noContribuinte;
-
+	/**
+	 * @return Distrito da pessoa
+	 */
 	string distrito;
 
 public:

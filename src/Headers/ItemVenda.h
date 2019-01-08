@@ -10,17 +10,29 @@ using namespace std;
 class ItemVenda {
 
 private:
-	//"prod" é um apontador para um "Produto"
+	/**
+	 * @brief Apontador para um produto
+	 */
 	Produto* prod;
-	//Quantidade de produto - quantas unidades se comprou
+	/**
+	 * @brief Quantidade de produto - quantas unidades se comprou
+	 */
 	unsigned int quant;
-	//IVA aplicável ao produto
+	/**
+	 * @brief IVA aplicavel ao produto
+	 */
 	unsigned int iva;
-	//Preço por unidade
+	/**
+	 * @brief Preco por unidade
+	 */
 	float precUnid;
-	//Comparticipação aplicável ao produto
+	/**
+	 * @brief Comparticipacao aplicavel ao produto
+	 */
 	float compart;
-	//Preço a pagar, com IVA e comparticipação aplicados
+	/**
+	 * @brief Preco a pagar, com IVA e comparticipacao aplicados
+	 */
 	float subtotal;
 
 public:

@@ -9,7 +9,9 @@
 using namespace std;
 
 class Cliente : public Pessoa {
-	//Vetor que guarda as compras realizadas pela pessoa
+	/**
+	 * @brief Vetor que guarda as compras realizadas pela pessoa
+	 */
 	vector<Venda*> historial;
 public:
 	/**
@@ -45,13 +47,27 @@ public:
 	 * @return Cliente e respetiva informacao
 	 */
 	friend std::ostream& operator<< (ostream & out, Cliente &cli);
+
+	/**
+		 * @brief Overload do operator == para comparar dois clientes
+		 * @param c Cliente
+		 * @return True se os clientes forem iguais, false caso contrario
+		 */
 	bool operator== (const Cliente & c) const;
+
+	/**
+		 * @brief Overload do operator < para comparar dois clientes
+		 * @param c Cliente
+		 * @return True se for menor que c, false caso contrario
+		 */
 	bool operator< (const Cliente & c) const;
 };
 
 class CompraInexistente
 {
-	//Código da compra
+	/**
+	 * @brief Codigo da compra
+	 */
 	unsigned int id;
 public:
 	/**

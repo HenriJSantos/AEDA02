@@ -10,7 +10,9 @@ using namespace std;
 
 class Outro : public Produto {
 private:
-	//"proxCodigo" será o código a atribuir ao produto
+	/**
+	 * @brief Codigo a atribuir ao produto
+	 */
 	static unsigned int proxCodigo;
 
 public:

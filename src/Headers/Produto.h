@@ -9,10 +9,25 @@ using namespace std;
 class Produto {
 
 private:
+	/**
+	 * @return Vetor de apontadores para produtos
+	 */
 	static vector<Produto*> produtos;
+	/**
+	 * @return Codigo do produto
+	 */
 	string codigo;
+	/**
+	 * @return Nome do produto
+	 */
 	string nome;
+	/**
+	 * @return Preco do produto
+	 */
 	float preco;
+	/**
+	 * @return Descricao do produto
+	 */
 	string descricao;
 
 public:
@@ -153,6 +168,9 @@ public:
 class OverflowCodigos
 {
 private:
+	/**
+	 * @return Categoria do produto (se e medicamento ou outro)
+	 */
 	string categoria;
 public:
 	/**
@@ -170,6 +188,9 @@ public:
 class NaoPassivelAReceita
 {
 private:
+	/**
+	 * @return Nome do produto nao passivel a receita
+	 */
 	string nomeProduto;
 public:
 	/**
@@ -187,6 +208,9 @@ public:
 class ProdutoInexistente
 {
 private:
+	/**
+	 * @return Codigo do produto inexistente
+	 */
 	string codigo;
 public:
 	/**

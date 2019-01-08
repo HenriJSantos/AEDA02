@@ -11,21 +11,37 @@
 using namespace std;
 
 class Venda {
-	//Identificador da próxima compra
+	/**
+	 * @brief Identificador da proxima compra
+	 */
 	static unsigned int proxId;
-	//Identificador da compra
+	/**
+	 * @brief Identificador da compra
+	 */
 	unsigned int id;
-	//Funcionario responsavel pela venda
+	/**
+	 * @brief Funcionario responsavel pela venda
+	 */
 	string funcionario;
-	//Vetor de itens comprados na venda
+	/**
+	 * @brief Vetor de itens comprados na venda
+	 */
 	vector<ItemVenda> itens;
-	//Data da venda
+	/**
+	 * @brief Data da venda
+	 */
 	Data data;
-	//Hora da venda
+	/**
+	 * @brief Hora da venda
+	 */
 	Hora hora;
-	//Total da compra
+	/**
+	 * @brief Total da compra
+	 */
 	float total;
-	//Vetor de produtos adquiridos com receita
+	/**
+	 * @brief Vetor de produtos adquiridos com receita
+	 */
 	vector<string> produtosReceitados;
 public:
 	/**
@@ -109,7 +125,6 @@ public:
 	 */
 	static void setProxId(unsigned int id);
 
-	//Compara duas vendas em relação às suas ids
 	/**
 	 * @brief Compara os identificadores de duas vendas, de modo a organiza-las por ordem crescente
 	 * @param p1 Apontador para a primeira venda a comparar (p1)
@@ -118,7 +133,6 @@ public:
 	 */
 	static bool compare(Venda * p1, Venda * p2);
 
-	//Overload do operador << para dar display à venda
 	/**
 	 * @brief Overload do operador << para dar display a venda
 	 * @param in Output stream para mostrar a venda
