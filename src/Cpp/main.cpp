@@ -868,6 +868,35 @@ void gestaoVendas()
 	}
 }
 
+void adicionarStock(){
+
+}
+
+void gestaoStocks()
+{
+	bool reabrirMenu = true;
+	while(reabrirMenu)
+	{
+		displayLogo();
+		cout << "1. Adicionar stock\n";
+		cout << "2. Voltar ao menu principal\n";
+		cout << "Insira a sua opcao: ";
+		unsigned int opcao;
+		inputHandler(opcao);
+		switch(opcao)
+		{
+		case 1:
+			adicionarStock();
+			break;
+		case 2:
+			reabrirMenu = false;
+			break;
+		default:
+			cout << "Opcao invalida.\n";
+		}
+	}
+}
+
 void comeceCadeia(){
 	string nomeFarm, moradaFarm;
 	string nome, morada, password, distrito;
@@ -919,9 +948,10 @@ void menu()
 		cout << "4. Gestao de Produtos\n";
 		cout << "5. Gestao de Receitas\n";
 		cout << "6. Gestao de Vendas\n";
-		cout << "7. Gravar ficheiros\n";
-		cout << "8. Mostrar Cadeia\n";
-		cout << "9. Desligar sistema\n";
+		cout << "7. Gestao de Stocks\n";
+		cout << "8. Gravar ficheiros\n";
+		cout << "9. Mostrar Cadeia\n";
+		cout << "10. Desligar sistema\n";
 		cout << "Insira a sua opcao: ";
 		unsigned int opcao;
 		inputHandler(opcao);
@@ -946,14 +976,17 @@ void menu()
 			gestaoVendas();
 			break;
 		case 7:
+			gestaoStocks();
+			break;
+		case 8:
 			exportarFicheiros();
 			displayLogo();
 			cout << "Sistema guardado.\n";
 			break;
-		case 8:
+		case 9:
 			cout << *cadeia << endl;
 			break;
-		case 9:
+		case 10:
 			reabrirMenu = false;
 			cout << "Fechando sistema...\n";
 			displayLogo();

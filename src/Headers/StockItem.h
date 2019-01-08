@@ -51,6 +51,7 @@ public:
 	 * @param si StockItem a comparar
 	 * @return "true" se o stock existente for menor que o stock de "si"
 	 */
+
 	bool operator< (const StockItem & si) const;
 };
 

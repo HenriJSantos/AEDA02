@@ -71,6 +71,8 @@ public:
 	 */
 	void setGerente(string gerente);
 
+	void addStock(Produto* prod, unsigned int quant);
+
 	/**
 	 * @brief Compara duas farmacias para as colocar por ordem crescente
 	 * @param farm1 Apontador para a primeira farmacia a comparar
@@ -91,5 +93,13 @@ public:
 	vector<StockItem> stockWithLessThan(unsigned int ammount);
 	void vendeItem(Produto * prod, unsigned int quant);
 };
+
+class StockInexistente {
+	Produto * prod;
+public:
+	StockInexistente(Produto * prod) {this->prod = prod;}
+	Produto * getProd() {return this->prod;}
+};
+
 
 #endif

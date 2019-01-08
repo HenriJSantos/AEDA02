@@ -132,3 +132,28 @@ vector<StockItem> Farmacia::stockWithLessThan(unsigned int ammount)
 
 	return temp;
 }
+
+void Farmacia::addStock(Produto* prod, unsigned int quant){
+
+	priority_queue<StockItem> tempStock = stock;
+	vector<StockItem> removedItems;
+	StockItem item;
+	bool added = false;
+
+	while(!tempStock.empty()){
+		item = tempStock.top();
+		removedItems.push_back(item);
+		tempStock.pop();
+		if(item.getProduct() == prod){
+			item.addQuantity(quant);
+			added = true;
+			break;
+		}
+	}
+
+	if(!added){
+		throw(StockInexistente(prod));
+	}
+
+
+}
