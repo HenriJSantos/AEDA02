@@ -17,6 +17,9 @@ using namespace std;
 
 typedef stack<int> stackoverflow;
 
+/**
+ * @brief Utilizada para ordenar os clientes por distrito numa binary search tree
+ */
 struct clientLess{
 	bool operator()(const Cliente * c1, const Cliente * c2) const
 	{
@@ -35,13 +38,13 @@ struct funcHash{
 		stackoverflow numberStack;
 		while (contrib > 0)
 		{
-		    numberStack.push(contrib % 10);
-		    contrib /= 10;
+			numberStack.push(contrib % 10);
+			contrib /= 10;
 		}
 		while (!numberStack.empty())
 		{
-		    hash = hash * 37 + numberStack.top();
-		    numberStack.pop();
+			hash = hash * 37 + numberStack.top();
+			numberStack.pop();
 		}
 		return hash;
 	}
@@ -54,15 +57,25 @@ struct funcHash{
 typedef unordered_set<Funcionario*,funcHash,funcHash> funcTable;
 
 class Cadeia {
-	//Nome da cadeia
+	/**
+	 * @brief Nome da cadeia
+	 */
 	string nome;
-	//Vetor de apontadores para farmacias pertencentes a cadeia
+	/**
+	 * @brief Vetor de apontadores para farmacias da cadeia
+	 */
 	vector<Farmacia*> farmacias;
-	//Unordered_set de apontadores para funcionarios pertencentes a cadeia
+	/**
+	 * @brief Unordered set de apontadores para funcionarios da cadeia
+	 */
 	funcTable funcionarios;
-	//Set de apontadores para clientes da cadeia
+	/**
+	 * @brief Set de apontadores para clientes da cadeia
+	 */
 	set<Cliente*, clientLess> clientes;
-	//Vetor de apontadores para todas as vendas da cadeia
+	/**
+	 * @brief Vetor de apontadores para vendas da cadeia
+	 */
 	vector<Venda*> vendas;
 
 public:
@@ -198,7 +211,9 @@ public:
 };
 
 class NaoExisteFarmacia {
-	//Nome da farmacia
+	/**
+	 * @brief Nome da farmacia
+	 */
 	string nome;
 public:
 	/**
@@ -213,11 +228,17 @@ public:
 };
 
 class NaoExistePessoa {
-	//Numero de contribuinte da pessoa
+	/**
+	 * @brief Numero de contribuinte da pessoa
+	 */
 	unsigned int contribuinte;
-	//Nome da pessoa
+	/**
+	 * @brief Nome da pessoa
+	 */
 	string nome;
-	//Tipo de pessoa (funcionario ou cliente)
+	/**
+	 * @brief Tipo de pessoa (funcionario ou cliente)
+	 */
 	string tipo;
 public:
 	/**
@@ -247,6 +268,9 @@ public:
 };
 
 class NaoExisteVenda {
+	/**
+	 * @brief Identificador da venda
+	 */
 	unsigned int id;
 public:
 	/**
@@ -261,6 +285,9 @@ public:
 };
 
 class CadeiaInexistente {
+	/**
+	 * @brief Nome da cadeia
+	 */
 	string nome;
 public:
 	/**
