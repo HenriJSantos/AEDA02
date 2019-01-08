@@ -17,6 +17,7 @@ public:
 	 * @param nome Nome do cliente
 	 * @param morada Morada do cliente
 	 * @param noContribuinte Numero de contribuinte do cliente
+	 * @param distrito Distrito do cliente
 	 */
 	Cliente(string nome, string morada, unsigned int noContribuinte, string distrito);
 

@@ -108,7 +108,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ada083f24855175c1b757834f509425b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atribui uma password ao funcionario.  <a href="#ada083f24855175c1b757834f509425b7">More...</a><br /></td></tr>
 <tr class="separator:ada083f24855175c1b757834f509425b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6051e3bc67af9050ec3a1bcd791d64d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_funcionario.html#a6051e3bc67af9050ec3a1bcd791d64d4">operator==</a> (const <a class="el" href="class_funcionario.html">Funcionario</a> &amp;f) const</td></tr>
-<tr class="memdesc:a6051e3bc67af9050ec3a1bcd791d64d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload do operator &lt;&lt; (para display no ecra)  <a href="#a6051e3bc67af9050ec3a1bcd791d64d4">More...</a><br /></td></tr>
+<tr class="memdesc:a6051e3bc67af9050ec3a1bcd791d64d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload do operator &lt;&lt;.  <a href="#a6051e3bc67af9050ec3a1bcd791d64d4">More...</a><br /></td></tr>
 <tr class="separator:a6051e3bc67af9050ec3a1bcd791d64d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_pessoa"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_pessoa')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_pessoa.html">Pessoa</a></td></tr>
 <tr class="memitem:a31ab38912a9f5b7e9a587eccb1fc1ff0 inherit pub_methods_class_pessoa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pessoa.html#a31ab38912a9f5b7e9a587eccb1fc1ff0">Pessoa</a> (string <a class="el" href="class_pessoa.html#ad4e88b8f3499405a7a03df648857c338">nome</a>, string <a class="el" href="class_pessoa.html#a73466544a08a78752596df919867db6c">morada</a>, unsigned int <a class="el" href="class_pessoa.html#a4e011c318b963ff985da78887c3c4592">noContribuinte</a>, string <a class="el" href="class_pessoa.html#a32e40fa5fcd23204db27a00d39d29600">distrito</a>)</td></tr>
@@ -216,6 +216,7 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname">nome</td><td>Nome do funcionario </td></tr>
     <tr><td class="paramname">morada</td><td>Morada do funcionario </td></tr>
     <tr><td class="paramname">noContribuinte</td><td>Numero de contribuinte do funcionario </td></tr>
+    <tr><td class="paramname">distrito</td><td>Distrito do funcionario </td></tr>
     <tr><td class="paramname">salario</td><td>Salario do funcionario </td></tr>
     <tr><td class="paramname">password</td><td>Password do funcionario para acesso ao sistema </td></tr>
   </table>
@@ -313,15 +314,14 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Overload do operator &lt;&lt; (para display no ecra) </p>
+<p>Overload do operator &lt;&lt;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">out</td><td>Output stream </td></tr>
-    <tr><td class="paramname">func</td><td><a class="el" href="class_funcionario.html">Funcionario</a> </td></tr>
+    <tr><td class="paramname">f</td><td><a class="el" href="class_funcionario.html">Funcionario</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_funcionario.html">Funcionario</a> e respetiva informacao </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True se os numeros de contribuinte dos funcionarios forem iguais, false caso contrario </dd></dl>
 
 </div>
 </div>

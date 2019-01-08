@@ -24,6 +24,7 @@ public:
 	 * @param nome Nome da pessoa
 	 * @param morada Morada da pessoa
 	 * @param noContribuinte Numero de contribuinte da pessoa
+	 * @param distrito Distrito da pessoa
 	 */
 	Pessoa(string nome, string morada, unsigned int noContribuinte, string distrito);
 	/**

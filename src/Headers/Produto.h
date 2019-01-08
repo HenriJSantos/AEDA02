@@ -105,8 +105,8 @@ public:
 
 	/**
 	 * @brief Compara dois produtos, para os organizar por ordem crescente
-	 * @param Apontador para o primeiro produto a comparar (p1)
-	 * @param Apontador para o segundo produto a comparar(p2)
+	 * @param p1 Apontador para o primeiro produto a comparar (p1)
+	 * @param p2 Apontador para o segundo produto a comparar(p2)
 	 * @return "true" se o codigo de p1 for menor que p2, "false" caso contrario
 	 */
 	static bool compare(Produto * p1, Produto * p2);

@@ -75,7 +75,7 @@ public:
 	 * @brief Compara duas farmacias para as colocar por ordem crescente
 	 * @param farm1 Apontador para a primeira farmacia a comparar
 	 * @param farm2 Apontador para a segunda farmacia a comparar
-	 * @retunr "true" se o nome da farmacia "farm1" for menor que o da "farm2", "false" caso contrario
+	 * @return "true" se o nome da farmacia "farm1" for menor que o da "farm2", "false" caso contrario
 	 */
 	static bool compare (Farmacia * farm1, Farmacia * farm2);
 

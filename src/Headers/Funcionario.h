@@ -25,6 +25,7 @@ public:
 	 * @param nome Nome do funcionario
 	 * @param morada Morada do funcionario
 	 * @param noContribuinte Numero de contribuinte do funcionario
+	 * @param distrito Distrito do funcionario
 	 * @param salario Salario do funcionario
 	 * @param password Password do funcionario para acesso ao sistema
 	 */
@@ -75,10 +76,9 @@ public:
 	void setPassword(string password);
 
 	/**
-	 * @brief Overload do operator << (para display no ecra)
-	 * @param out Output stream
-	 * @param func Funcionario
-	 * @return Funcionario e respetiva informacao
+	 * @brief Overload do operator <<
+	 * @param f Funcionario
+	 * @return True se os numeros de contribuinte dos funcionarios forem iguais, false caso contrario
 	 */
 
 	bool operator== (const Funcionario & f) const;
