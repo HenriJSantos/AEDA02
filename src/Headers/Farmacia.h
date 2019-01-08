@@ -111,6 +111,8 @@ public:
 	 * @return Vetor cujo stock de cada produto tem no maximo o valor dado
 	 */
 	vector<StockItem> stockWithLessThan(unsigned int ammount);
+
+
 };
 
 class StockInexistente {

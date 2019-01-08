@@ -53,6 +53,14 @@ public:
 	 */
 
 	bool operator< (const StockItem & si) const;
+
+	/**
+	 * @brief Overload do operator << (para display no ecra)
+	 * @param out Output stream
+	 * @param si StockItem a mostrar
+	 * @return StockItem e respetiva informacao
+	 */
+	friend std::ostream& operator<< (ostream & out, StockItem &si);
 };
 
 class StockInsuficiente {

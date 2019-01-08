@@ -49,17 +49,17 @@ public:
 	friend std::ostream& operator<< (ostream & out, Cliente &cli);
 
 	/**
-		 * @brief Overload do operator == para comparar dois clientes
-		 * @param c Cliente
-		 * @return True se os clientes forem iguais, false caso contrario
-		 */
+	 * @brief Overload do operator == para comparar dois clientes
+	 * @param c Cliente
+	 * @return True se os clientes forem iguais, false caso contrario
+	 */
 	bool operator== (const Cliente & c) const;
 
 	/**
-		 * @brief Overload do operator < para comparar dois clientes
-		 * @param c Cliente
-		 * @return True se for menor que c, false caso contrario
-		 */
+	 * @brief Overload do operator < para comparar dois clientes
+	 * @param c Cliente
+	 * @return True se for menor que c, false caso contrario
+	 */
 	bool operator< (const Cliente & c) const;
 };
 
