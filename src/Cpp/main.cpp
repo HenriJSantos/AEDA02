@@ -274,7 +274,7 @@ void mostrarFuncionarios(){
 	for(unsigned int i = 0; i < funcs.size(); i++){
 		cout << *funcs.at(i) << endl;
 	}
-	cout << "Funcionarios mostrados." << endl;
+	cout << endl;
 }
 
 void mostrarClientes(){
@@ -283,7 +283,7 @@ void mostrarClientes(){
 	for(unsigned int i = 0; i < cli.size(); i++){
 		cout << *cli.at(i) << endl;
 	}
-	cout << "Funcionarios mostrados." << endl;
+	cout << endl;
 }
 
 
@@ -520,7 +520,7 @@ void mostrarFuncionariosDaFarmacia(){
 		cout << *funcs.at(i) << endl;
 	}
 
-	cout << "Farmacia comprada com sucesso.\n";
+	cout << endl;
 }
 
 void gestaoFarmacias()
