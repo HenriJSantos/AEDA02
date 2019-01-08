@@ -147,15 +147,15 @@ Cliente* Cadeia::getClienteComNoContribuinte(unsigned int noContribuinte)
 
 Funcionario* Cadeia::getFuncionarioComNoContribuinte(unsigned int noContribuinte)
 {
+	Funcionario func("","",noContribuinte,"",0,"");
 	funcTable::iterator itr;
-	for (itr = funcionarios.begin(); itr != funcionarios.end(); itr++)
-	{
-		if ((*itr)->getNoContribuinte() == noContribuinte)
-		{
-			return (*itr);
-		}
+	itr = funcionarios.find(&func);
+	if(itr == funcionarios.end()){
+		throw(NaoExistePessoa(noContribuinte, "Funcionario"));
 	}
-	throw(NaoExistePessoa(noContribuinte, "Funcionario"));
+	else{
+		return *itr;
+	}
 }
 
 Cliente* Cadeia::getClienteComNome(string nome)

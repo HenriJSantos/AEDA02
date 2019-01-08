@@ -43,7 +43,7 @@ void Funcionario::setPassword(string password)
 
 bool Funcionario::operator== (const Funcionario & f) const
 {
-	if(this->getNome() == f.getNome() && this->getNoContribuinte() == f.getNoContribuinte())
+	if(this->getNoContribuinte() == f.getNoContribuinte())
 		return true;
 	else
 		return false;
