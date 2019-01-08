@@ -10,14 +10,6 @@
 
 using namespace std;
 
-struct stockLess
-{
-	bool operator()(const pair<Produto*, unsigned> s1, const pair<Produto*, unsigned> s2) const
-	{
-		return (s1.second < s2.second);
-	}
-};
-
 class Farmacia {
 
 private:
@@ -86,6 +78,9 @@ public:
 	 * @return Farmacia e respetiva informacao
 	 */
 	friend std::ostream& operator<< (ostream & out, Farmacia & farm);
+	void Farmacia::addProductToStock(Produto * prod);
+	void Farmacia::restoreStock(unsigned int min);
+	vector<StockItem> Farmacia::stockWithLessThan(unsigned int ammount);
 };
 
 #endif

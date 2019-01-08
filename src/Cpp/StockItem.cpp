@@ -36,5 +36,5 @@ bool StockItem::takeQuantity(unsigned int quant)
 
 bool StockItem::operator< (const StockItem & si) const
 {
-	return (this->quant < si.getQuantity());
+	return (this->quant > si.getQuantity());
 }

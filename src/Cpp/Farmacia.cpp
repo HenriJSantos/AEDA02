@@ -45,3 +45,58 @@ std::ostream& operator<< (ostream & out, Farmacia & farm){
 
 	return out;
 }
+
+void Farmacia::addProductToStock(Produto * prod)
+{
+	StockItem si(prod, 0);
+	stock.push(si);
+}
+
+void Farmacia::restoreStock(unsigned int min)
+{
+	vector<StockItem> temp;
+
+	while(!stock.empty())
+	{
+		StockItem copy = stock.top();
+		stock.pop();
+		if(copy.getQuantity() < min)
+		{
+			copy.setQuantity(min);
+			temp.push_back(copy);
+		}
+		else
+		{
+			temp.push_back(copy);
+			break;
+		}
+	}
+
+	for (unsigned int i = 0; i < temp.size(); i++)
+	{
+		stock.push(temp[i]);
+	}
+}
+
+vector<StockItem> Farmacia::stockWithLessThan(unsigned int ammount)
+{
+	vector<StockItem> temp;
+
+	while(!stock.empty())
+	{
+		if(stock.top().getQuantity() < ammount)
+		{
+			temp.push_back(stock.top());
+			stock.pop();
+		}
+		else
+			break;
+	}
+
+	for (unsigned int i = 0; i < temp.size(); i++)
+	{
+		stock.push(temp[i]);
+	}
+
+	return temp;
+}
