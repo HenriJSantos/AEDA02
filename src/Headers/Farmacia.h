@@ -6,6 +6,7 @@
 #include <queue>
 
 #include "Produto.h"
+#include "StockItem.h"
 
 using namespace std;
 
@@ -27,7 +28,7 @@ private:
 	//Gerente da farmácia
 	string gerente;
 	//Stock
-	priority_queue<pair<Produto*,unsigned>,vector<pair<Produto*,unsigned>>,stockLess> stock;
+	priority_queue<StockItem> stock;
 
 public:
 	/**

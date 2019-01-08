@@ -52,6 +52,10 @@ int importarFicheiros(string nomeFicheiro, string nome)
 		cout << "Nao existe um ficheiro com esse nome\n";
 		return 1;
 	}
+	catch (const std::out_of_range &) {
+		cout << "Ficheiro inválido.\n";
+		return 1;
+	}
 	return 0;
 }
 
