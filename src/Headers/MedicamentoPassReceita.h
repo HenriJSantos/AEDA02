@@ -10,9 +10,13 @@ using namespace std;
 class MedicamentoPassReceita : public Medicamento {
 
 private:
-	//Taxa de desconto
+	/**
+	 * @brief Taxa de desconto
+	 */
 	unsigned int taxaDesc;
-	//Medicamento passivel sem receita (se true)
+	/**
+	 * @brief Se "true", o medicamento e adquirivel sem receita
+	 */
 	bool semReceita;
 
 public:

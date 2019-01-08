@@ -9,13 +9,18 @@ using namespace std;
 class Hora {
 
 private:
-	//Guarda as horas
+	/**
+	 * @brief Guarda as horas
+	 */
 	unsigned int hora;
-
-	//Guarda os minutos
+	/**
+	 * @brief Guarda os minutos
+	 */
 	unsigned int minuto;
 
-	//Guarda os segundos
+	/**
+	 * @brief Guarda os segundos
+	 */
 	unsigned int segundo;
 
 public:
@@ -37,7 +42,7 @@ public:
 	 */
 	unsigned int getHora();
 
-	 /**
+	/**
 	 * @brief Altera a hora
 	 * @param h Novo valor da hora
 	 */
@@ -48,7 +53,7 @@ public:
 	 */
 	unsigned int getMinutos();
 
-	 /**
+	/**
 	 * @brief Altera os minutos
 	 * @param m Novo valor dos minutos
 	 */
@@ -59,13 +64,13 @@ public:
 	 */
 	unsigned int getSegundos();
 
-	 /**
+	/**
 	 * @brief Altera os segundos
 	 * @param s Novo valor dos segundos
 	 */
 	void setSegundos(unsigned int s);
 
-	 /**
+	/**
 	 * @brief Overload do operator <<
 	 * @param o Output stream para dar display a hora
 	 * @param h Hora a guardar na output stream

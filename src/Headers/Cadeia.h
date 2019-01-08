@@ -31,6 +31,9 @@ struct clientLess{
 	}
 };
 
+/**
+ * @brief Hash function utilizada para manutencao dos funcionarios no unordered set
+ */
 struct funcHash{
 
 	int operator()(const Funcionario* func) const{
@@ -190,8 +193,14 @@ public:
 	 */
 	vector <Funcionario* > getFuncionariosDaFarmacia(Farmacia* farm);
 
+	/**
+	 * @return Vetor com apontadores para os funcionarios da cadeia
+	 */
 	vector<Funcionario*> getFuncionarios();
 
+	/**
+	 * @return Vetor com apontadores para os clientes da cadeia
+	 */
 	vector<Cliente*> getClientes();
 
 	/**

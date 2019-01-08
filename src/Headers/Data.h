@@ -9,13 +9,19 @@ using namespace std;
 class Data {
 
 private:
-	//Guarda o dia
+	/**
+	 * @brief Guarda o dia
+	 */
 	unsigned int dia;
 
-	//Guarda o mes
+	/**
+	 * @brief Guarda o mes
+	 */
 	unsigned int mes;
 
-	//Guarda o ano
+	/**
+	 * @brief Guarda o ano
+	 */
 	unsigned int ano;
 
 public:
@@ -59,13 +65,13 @@ public:
 	 */
 	unsigned int getAno();
 
-	 /**
+	/**
 	 * @brief Altera o ano
 	 * @param a Novo valor do ano
 	 */
-	 void setAno(unsigned int a);
+	void setAno(unsigned int a);
 
-	 /**
+	/**
 	 * @brief Overload do operator << (para display no ecra)
 	 * @param o Output stream
 	 * @param d Data a guardar na output stream

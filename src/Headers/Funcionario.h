@@ -11,13 +11,21 @@ using namespace std;
 class Funcionario : public Pessoa {
 
 private:
-	//Salario do funcionario
+	/**
+	 * @brief Salario do funcionario
+	 */
 	unsigned int salario;
-	//Apontador para a farmacia onde o funcionario trabalha
+	/**
+	 * @brief Apontador para a farmacia onde o funcionario trabalha
+	 */
 	Farmacia* farm;
-	//Cargo do funcionario
+	/**
+	 * @brief Cargo do funcionario
+	 */
 	string cargo;
-	//Password do funcionario para entrar no sistema
+	/**
+	 * @brief Password do funcionario para aceder ao sistema
+	 */
 	string password;
 public:
 	/**
@@ -76,13 +84,18 @@ public:
 	void setPassword(string password);
 
 	/**
-	 * @brief Overload do operator <<
+	 * @brief Overload do operator ==
 	 * @param f Funcionario
 	 * @return True se os numeros de contribuinte dos funcionarios forem iguais, false caso contrario
 	 */
-
 	bool operator== (const Funcionario & f) const;
 
+	/**
+	 * @brief Overload do operator << (para display no ecra)
+	 * @param out Output stream
+	 * @param func Funcionario
+	 * @return Funcionario e respetiva informacao
+	 */
 	friend std::ostream& operator<< (ostream & out, Funcionario & func);
 };
 
