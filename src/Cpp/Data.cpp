@@ -42,6 +42,6 @@ void Data::setAno(unsigned int a) {
 }
 
 ostream & operator<<(ostream & o, const Data & d) {
-	o << setfill('0') << setw(2) << d.dia << "/" << d.mes << "/" << d.ano;
+	o << setfill('0') << setw(2) << d.dia << "/" << setfill('0') << setw(2) << d.mes << "/" << setfill('0') << setw(2) << d.ano;
 	return o;
 }

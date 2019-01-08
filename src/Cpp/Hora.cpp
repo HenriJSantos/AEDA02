@@ -42,6 +42,6 @@ void Hora::setSegundos(unsigned int s){
 }
 
 ostream & operator<<(ostream & o, const Hora & h){
-	o << setfill('0') << setw(2) << h.hora << ":" << h.minuto << ":" << h.segundo;
+	o << setfill('0') << setw(2) << h.hora << ":" << setfill('0') << setw(2) << h.minuto << ":" << setfill('0') << setw(2) << h.segundo;
 	return o;
 }

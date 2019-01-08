@@ -6,6 +6,7 @@
 #include <string>
 #include <set>
 #include <unordered_set>
+#include <stack>
 #include "Farmacia.h"
 #include "Funcionario.h"
 #include "Cliente.h"
@@ -28,7 +29,19 @@ struct clientLess{
 struct funcHash{
 
 	int operator()(const Funcionario* func) const{
-		return 0;
+		unsigned hash, contrib = func->getNoContribuinte();
+		stack<int> numberStack;
+		while (contrib > 0)
+		{
+		    numberStack.push(contrib % 10);
+		    contrib /= 10;
+		}
+		while (!numberStack.empty())
+		{
+		    hash = hash * 37 + numberStack.top();
+		    numberStack.pop();
+		}
+		return hash;
 	}
 
 	bool operator()(const Funcionario* func1, const Funcionario* func2) const{

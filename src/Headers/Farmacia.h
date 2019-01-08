@@ -3,8 +3,19 @@
 
 #include <iostream>
 #include <vector>
+#include <queue>
+
+#include "Produto.h"
 
 using namespace std;
+
+struct stockLess
+{
+	bool operator()(const pair<Produto*, unsigned> s1, const pair<Produto*, unsigned> s2) const
+	{
+		return (s1.second < s2.second);
+	}
+};
 
 class Farmacia {
 
@@ -15,6 +26,8 @@ private:
 	string morada;
 	//Gerente da farmácia
 	string gerente;
+	//Stock
+	priority_queue<pair<Produto*,unsigned>,vector<pair<Produto*,unsigned>>,stockLess> stock;
 
 public:
 	/**
