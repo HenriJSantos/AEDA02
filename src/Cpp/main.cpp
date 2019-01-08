@@ -16,6 +16,7 @@
 #include "Pessoa.h"
 #include "Produto.h"
 #include "Receita.h"
+#include "StockItem.h"
 #include "Venda.h"
 #include "import_export.h"
 
@@ -874,11 +875,32 @@ void adicionarStock(){
 	cout << "Introduza o nome da farmacia: ";
 	getline(cin, nomeFarm);
 	try {
+		farm = cadeia->getFarmaciaComNome(nomeFarm);
 	} catch(NaoExisteFarmacia e) {
 		cout << "Nao existe nenhuma farmacia com nome " << e.getNome() << " associado.\n";
 		return;
 	}
+	string codigo;
+	Produto* prod;
+	cout << "Introduza o codigo do produto cujo stock deseja acrescentar: ";
+	getline(cin, codigo);
+	try {
+		prod = prod->getProdutoComCodigo(codigo);
+	} catch(ProdutoInexistente e) {
+		cout << "Nao existe nenhum Produto com codigo " << e.getCodigo() << " associado.\n";
+		return;
+	}
+	unsigned int quant;
+	cout << "Introduza a quantidade que deseja adicionar ao stock:";
+	inputHandler(quant);
+	try {
+		farm->addStock(prod,quant);
+	} catch(StockInexistente e) {
+		cout << "Nao existe nenhum Produto com codigo " << e.getProd()->getCodigo() << " em stock\n";
+		return;
+	}
 
+	cout << "Quantidade adicionada com sucesso.\n";
 }
 
 void gestaoStocks()

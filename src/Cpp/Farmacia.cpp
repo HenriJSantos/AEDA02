@@ -137,7 +137,7 @@ void Farmacia::addStock(Produto* prod, unsigned int quant){
 
 	priority_queue<StockItem> tempStock = stock;
 	vector<StockItem> removedItems;
-	StockItem item;
+	StockItem item(prod,0);
 	bool added = false;
 
 	while(!tempStock.empty()){
