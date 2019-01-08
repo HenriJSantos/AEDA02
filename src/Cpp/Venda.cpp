@@ -18,6 +18,7 @@ Venda::Venda(string funcionario, string data, string hora, unsigned int id) {
 	Data d(stoi(data.substr(0,2)),stoi(data.substr(3,2)),stoi(data.substr(6)));
 	this->data = d;
 	Hora h(stoi(hora.substr(0,2)),stoi(hora.substr(3,2)), stoi(hora.substr(6,2)));
+	this->hora = h;
 	this->id = id;
 	this->funcionario = funcionario;
 	this->total = 0;
