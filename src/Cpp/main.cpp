@@ -803,10 +803,28 @@ void criarVenda(){
 			farm->vendeItem(prod, quant);
 			} catch (StockInexistente) {
 				cout << "Nao temos esse produto em stock\n";
-				continue;
+				cout << "Deseja adicionar mais itens a venda?(y/n)";
+				do{
+					getline(cin, maisItem);
+				}while(maisItem != "y" && maisItem != "n");
+				if(maisItem == "y"){
+					continue;
+				}
+				else{
+					break;
+				}
 			} catch (StockInsuficiente)
 			{
-				cout << "Nao temos suficiente desse produto em stock\n";
+				cout << "Deseja adicionar mais itens a venda?(y/n)";
+				do{
+					getline(cin, maisItem);
+				}while(maisItem != "y" && maisItem != "n");
+				if(maisItem == "y"){
+					continue;
+				}
+				else{
+					break;
+				}
 			}
 			venda->addItem(prod, quant);
 
@@ -835,7 +853,7 @@ void criarVenda(){
 				prod = Produto::getProdutoComCodigo(codigo);
 			}catch(ProdutoInexistente e){
 				cout << "Nao existe produto com codigo  " << e.getCodigo() << "\n";
-				return;
+				continue;
 			}
 
 			cout << "Introduza o numero de produtos que pretende comprar: ";
@@ -845,9 +863,29 @@ void criarVenda(){
 				farm->vendeItem(prod, quant);
 			} catch (StockInexistente) {
 				cout << "Nao temos esse produto em stock\n";
+				cout << "Deseja adicionar mais itens a venda?(y/n)";
+				do{
+					getline(cin, maisItem);
+				}while(maisItem != "y" && maisItem != "n");
+				if(maisItem == "y"){
+					continue;
+				}
+				else{
+					break;
+				}
 				continue;
 			} catch (StockInsuficiente) {
 				cout << "Nao temos suficiente desse produto em stock\n";
+				cout << "Deseja adicionar mais itens a venda?(y/n)";
+				do{
+					getline(cin, maisItem);
+				}while(maisItem != "y" && maisItem != "n");
+				if(maisItem == "y"){
+					continue;
+				}
+				else{
+					break;
+				}
 			}
 			venda->addItem(prod, quant);
 
@@ -976,6 +1014,7 @@ void gestaoStocks()
 		{
 		case 1:
 			adicionarStock();
+			break;
 		case 2:
 			adicionarQuantAoStock();
 			break;

@@ -54,13 +54,14 @@ void Farmacia::addProductToStock(Produto * prod)
 
 void Farmacia::vendeItem(Produto * prod, unsigned int quant)
 {
+	priority_queue<StockItem> queue_temp = stock;
 	vector<StockItem> temp;
 	bool found = false;
 
-	while(!stock.empty())
+	while(!queue_temp.empty())
 	{
-		StockItem copy = stock.top();
-		stock.pop();
+		StockItem copy = queue_temp.top();
+		queue_temp.pop();
 		if(copy.getProduct() == prod)
 		{
 			copy.takeQuantity(quant);
@@ -74,13 +75,14 @@ void Farmacia::vendeItem(Produto * prod, unsigned int quant)
 		}
 	}
 
-	for (unsigned int i = 0; i < temp.size(); i++)
-	{
-		stock.push(temp[i]);
-	}
-
 	if(!found)
 		throw(StockInexistente(prod));
+
+	for (unsigned int i = 0; i < temp.size(); i++)
+	{
+		queue_temp.push(temp[i]);
+	}
+	stock = queue_temp;
 }
 
 void Farmacia::restoreStock(unsigned int ammount)
