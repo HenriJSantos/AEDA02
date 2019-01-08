@@ -909,6 +909,36 @@ void adicionarStock(){
 	}
 	string codigo;
 	Produto* prod;
+	cout << "Introduza o codigo do produto a adicionar a stock: ";
+	getline(cin, codigo);
+	try {
+		prod = prod->getProdutoComCodigo(codigo);
+	} catch(ProdutoInexistente e) {
+		cout << "Nao existe nenhum Produto com codigo " << e.getCodigo() << " associado.\n";
+		return;
+	}
+	farm->addProductToStock(prod);
+	unsigned int quant;
+	cout << "Introduza a quantidade que deseja adicionar ao stock:";
+	inputHandler(quant);
+	farm->addStock(prod,quant);
+
+	cout << "Produto adicionado ao stock com sucesso.\n";
+}
+
+void adicionarQuantAoStock(){
+	Farmacia* farm;
+	string nomeFarm;
+	cout << "Introduza o nome da farmacia: ";
+	getline(cin, nomeFarm);
+	try {
+		farm = cadeia->getFarmaciaComNome(nomeFarm);
+	} catch(NaoExisteFarmacia e) {
+		cout << "Nao existe nenhuma farmacia com nome " << e.getNome() << " associado.\n";
+		return;
+	}
+	string codigo;
+	Produto* prod;
 	cout << "Introduza o codigo do produto cujo stock deseja acrescentar: ";
 	getline(cin, codigo);
 	try {
@@ -937,7 +967,8 @@ void gestaoStocks()
 	{
 		displayLogo();
 		cout << "1. Adicionar stock\n";
-		cout << "2. Voltar ao menu principal\n";
+		cout << "2. Adicionar quantidade ao stock\n";
+		cout << "3. Voltar ao menu principal\n";
 		cout << "Insira a sua opcao: ";
 		unsigned int opcao;
 		inputHandler(opcao);
@@ -945,8 +976,10 @@ void gestaoStocks()
 		{
 		case 1:
 			adicionarStock();
-			break;
 		case 2:
+			adicionarQuantAoStock();
+			break;
+		case 3:
 			reabrirMenu = false;
 			break;
 		default:
