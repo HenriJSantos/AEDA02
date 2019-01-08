@@ -88,16 +88,45 @@ public:
 	 * @return Farmacia e respetiva informacao
 	 */
 	friend std::ostream& operator<< (ostream & out, Farmacia & farm);
+	/**
+	 * @brief Garante que o stock de cada produto da farmacia tenha o valor minimo dado
+	 * @param min Valor minimo do stock
+	 */
 	void restoreStock(unsigned int min);
+	/**
+	 * @brief Adiciona um produto com stock 0 aos produtos da farmacia
+	 * @param prod Apontador para o produto
+	 */
 	void addProductToStock(Produto * prod);
-	vector<StockItem> stockWithLessThan(unsigned int ammount);
+
+	/**
+	 * @brief Venda de um produto da farmacia, atualizando o respetivo stock
+	 * @param prod Apontador para o produto a comprar
+	 * @param quant Quantidade a retirar ao stock do produto
+	 */
 	void vendeItem(Produto * prod, unsigned int quant);
+	/**
+	 * @brief Garante que o stock de cada produto da farmacia tenha o valor maximo dado
+	 * @param ammount Valor maximo do stock
+	 * @return Vetor cujo stock de cada produto tem no maximo o valor dado
+	 */
+	vector<StockItem> stockWithLessThan(unsigned int ammount);
 };
 
 class StockInexistente {
+	/**
+	 * @brief Apontador para o produto da farmacia que nao existe em stock
+	 */
 	Produto * prod;
 public:
+	/**
+	 * @brief Construtor da classe "StockInexistente" (excecao)
+	 * @param prod Apontador para o produto da farmacia
+	 */
 	StockInexistente(Produto * prod) {this->prod = prod;}
+	/**
+	 * @return Produto que nao existe em stock
+	 */
 	Produto * getProd() {return this->prod;}
 };
 

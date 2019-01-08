@@ -28,6 +28,7 @@ var searchData=
   ['settotal',['setTotal',['../class_venda.html#a15de20f2bc2f510644deb68570bb3b26',1,'Venda']]],
   ['stackoverflow',['stackoverflow',['../_cadeia_8h.html#a81fa9f106101594c96ef2a1ebcf38bed',1,'Cadeia.h']]],
   ['stock',['stock',['../class_farmacia.html#a34619c0f65b2030b2a1f60c1cf8c4a6b',1,'Farmacia']]],
+  ['stockinexistente',['StockInexistente',['../class_stock_inexistente.html',1,'StockInexistente'],['../class_stock_inexistente.html#a4fdb51bf99af2aba8718fecbf342ca8e',1,'StockInexistente::StockInexistente()']]],
   ['stockinsuficiente',['StockInsuficiente',['../class_stock_insuficiente.html',1,'StockInsuficiente'],['../class_stock_insuficiente.html#a6d0d20ba10e3554b794fca749960940d',1,'StockInsuficiente::StockInsuficiente()']]],
   ['stockitem',['StockItem',['../class_stock_item.html',1,'StockItem'],['../class_stock_item.html#a003b54163cb6ef7ce1c6687803d624a5',1,'StockItem::StockItem()']]],
   ['stockitem_2eh',['StockItem.h',['../_stock_item_8h.html',1,'']]],

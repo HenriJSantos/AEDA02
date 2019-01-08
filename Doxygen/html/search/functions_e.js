@@ -23,6 +23,7 @@ var searchData=
   ['setsalario',['setSalario',['../class_funcionario.html#a56a7660370a7126afe3d923584ff048a',1,'Funcionario']]],
   ['setsegundos',['setSegundos',['../class_hora.html#ab33278019413ba675ef017315fea4086',1,'Hora']]],
   ['settotal',['setTotal',['../class_venda.html#a15de20f2bc2f510644deb68570bb3b26',1,'Venda']]],
+  ['stockinexistente',['StockInexistente',['../class_stock_inexistente.html#a4fdb51bf99af2aba8718fecbf342ca8e',1,'StockInexistente']]],
   ['stockinsuficiente',['StockInsuficiente',['../class_stock_insuficiente.html#a6d0d20ba10e3554b794fca749960940d',1,'StockInsuficiente']]],
   ['stockitem',['StockItem',['../class_stock_item.html#a003b54163cb6ef7ce1c6687803d624a5',1,'StockItem']]],
   ['stockwithlessthan',['stockWithLessThan',['../class_farmacia.html#a25e69b02ea6d897a43d1d05715087ea5',1,'Farmacia']]]

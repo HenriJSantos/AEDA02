@@ -9,6 +9,7 @@ var searchData=
   ['addproduto',['addProduto',['../class_receita.html#af20ef80f53a6e03958cb625e0f4217f7',1,'Receita']]],
   ['addquantity',['addQuantity',['../class_stock_item.html#a8538299cb0ecf71f4f32800a3277785f',1,'StockItem']]],
   ['addreceita',['addReceita',['../class_venda.html#abcc41dfe6151940efb3496abb1c3380f',1,'Venda']]],
+  ['addstock',['addStock',['../class_farmacia.html#a16ac74c75e0c6be770a0572ca10a05cd',1,'Farmacia']]],
   ['addvenda',['addVenda',['../class_cadeia.html#a7644d3405cae498f329da66cbe7a4858',1,'Cadeia']]],
   ['adquirivelsemreceita',['adquirivelSemReceita',['../class_medicamento_pass_receita.html#a2050146f6c6876b1ec7a73ff2010e0e0',1,'MedicamentoPassReceita::adquirivelSemReceita()'],['../class_produto.html#a09ac5bee4b0c0555acc66ded66accd47',1,'Produto::adquirivelSemReceita()']]]
 ];

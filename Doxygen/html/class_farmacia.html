@@ -94,14 +94,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac19f110b0e88bbdb272dfd736bdf6559"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#ac19f110b0e88bbdb272dfd736bdf6559">setGerente</a> (string <a class="el" href="class_farmacia.html#a6bea75c0ceb143908f124934ef10c97e">gerente</a>)</td></tr>
 <tr class="memdesc:ac19f110b0e88bbdb272dfd736bdf6559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atribui um gerente a farmacia.  <a href="#ac19f110b0e88bbdb272dfd736bdf6559">More...</a><br /></td></tr>
 <tr class="separator:ac19f110b0e88bbdb272dfd736bdf6559"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a914f5d85566edff08af2080c1449bdca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a914f5d85566edff08af2080c1449bdca">addProductToStock</a> (<a class="el" href="class_produto.html">Produto</a> *prod)</td></tr>
-<tr class="memdesc:a914f5d85566edff08af2080c1449bdca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona o produto a fila de prioridade de stock.  <a href="#a914f5d85566edff08af2080c1449bdca">More...</a><br /></td></tr>
-<tr class="separator:a914f5d85566edff08af2080c1449bdca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16ac74c75e0c6be770a0572ca10a05cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a16ac74c75e0c6be770a0572ca10a05cd">addStock</a> (<a class="el" href="class_produto.html">Produto</a> *prod, unsigned int quant)</td></tr>
+<tr class="separator:a16ac74c75e0c6be770a0572ca10a05cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3277d940ef4a74228b26d5b35c9a5f6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a3277d940ef4a74228b26d5b35c9a5f6b">restoreStock</a> (unsigned int min)</td></tr>
-<tr class="memdesc:a3277d940ef4a74228b26d5b35c9a5f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Garante que o stock de cada produto farmacia tem o valor minimo indicado.  <a href="#a3277d940ef4a74228b26d5b35c9a5f6b">More...</a><br /></td></tr>
+<tr class="memdesc:a3277d940ef4a74228b26d5b35c9a5f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Garante que o stock de cada produto da farmacia tenha o valor minimo dado.  <a href="#a3277d940ef4a74228b26d5b35c9a5f6b">More...</a><br /></td></tr>
 <tr class="separator:a3277d940ef4a74228b26d5b35c9a5f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a914f5d85566edff08af2080c1449bdca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a914f5d85566edff08af2080c1449bdca">addProductToStock</a> (<a class="el" href="class_produto.html">Produto</a> *prod)</td></tr>
+<tr class="memdesc:a914f5d85566edff08af2080c1449bdca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um produto com stock 0 aos produtos da farmacia.  <a href="#a914f5d85566edff08af2080c1449bdca">More...</a><br /></td></tr>
+<tr class="separator:a914f5d85566edff08af2080c1449bdca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afce0acac8363b9040d7cc4c101c980bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#afce0acac8363b9040d7cc4c101c980bf">vendeItem</a> (<a class="el" href="class_produto.html">Produto</a> *prod, unsigned int quant)</td></tr>
+<tr class="memdesc:afce0acac8363b9040d7cc4c101c980bf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_venda.html">Venda</a> de um produto da farmacia, atualizando o respetivo stock.  <a href="#afce0acac8363b9040d7cc4c101c980bf">More...</a><br /></td></tr>
+<tr class="separator:afce0acac8363b9040d7cc4c101c980bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25e69b02ea6d897a43d1d05715087ea5"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_stock_item.html">StockItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a25e69b02ea6d897a43d1d05715087ea5">stockWithLessThan</a> (unsigned int ammount)</td></tr>
-<tr class="memdesc:a25e69b02ea6d897a43d1d05715087ea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Garante que o stock de cada produto da farmacia tem o valor maximo indicado.  <a href="#a25e69b02ea6d897a43d1d05715087ea5">More...</a><br /></td></tr>
+<tr class="memdesc:a25e69b02ea6d897a43d1d05715087ea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Garante que o stock de cada produto da farmacia tenha o valor maximo dado.  <a href="#a25e69b02ea6d897a43d1d05715087ea5">More...</a><br /></td></tr>
 <tr class="separator:a25e69b02ea6d897a43d1d05715087ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
@@ -186,13 +191,41 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adiciona o produto a fila de prioridade de stock. </p>
+<p>Adiciona um produto com stock 0 aos produtos da farmacia. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">prod</td><td>Apontador para o produto a adicionar </td></tr>
+    <tr><td class="paramname">prod</td><td>Apontador para o produto </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a16ac74c75e0c6be770a0572ca10a05cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16ac74c75e0c6be770a0572ca10a05cd">&#9670;&nbsp;</a></span>addStock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Farmacia::addStock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_produto.html">Produto</a> *&#160;</td>
+          <td class="paramname"><em>prod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>quant</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -312,10 +345,10 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Garante que o stock de cada produto farmacia tem o valor minimo indicado. </p>
+<p>Garante que o stock de cada produto da farmacia tenha o valor minimo dado. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">min</td><td>Minimo de stock da farmacia </td></tr>
+    <tr><td class="paramname">min</td><td>Valor minimo do stock </td></tr>
   </table>
   </dd>
 </dl>
@@ -416,14 +449,51 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Garante que o stock de cada produto da farmacia tem o valor maximo indicado. </p>
+<p>Garante que o stock de cada produto da farmacia tenha o valor maximo dado. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ammount</td><td>Maximo de stock da farmacia </td></tr>
+    <tr><td class="paramname">ammount</td><td>Valor maximo do stock </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Vetor cujo stock de cada produto nao ultrapassa o valor "ammount" </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Vetor cujo stock de cada produto tem no maximo o valor dado </dd></dl>
+
+</div>
+</div>
+<a id="afce0acac8363b9040d7cc4c101c980bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afce0acac8363b9040d7cc4c101c980bf">&#9670;&nbsp;</a></span>vendeItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Farmacia::vendeItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_produto.html">Produto</a> *&#160;</td>
+          <td class="paramname"><em>prod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>quant</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_venda.html">Venda</a> de um produto da farmacia, atualizando o respetivo stock. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prod</td><td>Apontador para o produto a comprar </td></tr>
+    <tr><td class="paramname">quant</td><td>Quantidade a retirar ao stock do produto </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
