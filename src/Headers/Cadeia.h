@@ -15,6 +15,8 @@
 
 using namespace std;
 
+typedef stack<int> stackoverflow;
+
 struct clientLess{
 	bool operator()(const Cliente * c1, const Cliente * c2) const
 	{
@@ -30,7 +32,7 @@ struct funcHash{
 
 	int operator()(const Funcionario* func) const{
 		unsigned hash, contrib = func->getNoContribuinte();
-		stack<int> numberStack;
+		stackoverflow numberStack;
 		while (contrib > 0)
 		{
 		    numberStack.push(contrib % 10);
