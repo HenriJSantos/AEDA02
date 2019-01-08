@@ -181,9 +181,33 @@ vector<Funcionario* > Cadeia::getFuncionariosDaFarmacia(Farmacia* farm){
 			funcs.push_back((*itr));
 		}
 	}
+	sort(funcs.begin(),funcs.end(),Pessoa::compare);
 	return funcs;
 }
 
+vector<Funcionario* > Cadeia::getFuncionarios(){
+
+	vector<Funcionario* > funcs;
+
+	funcTable::iterator itr;
+	for (itr = funcionarios.begin(); itr != funcionarios.end(); itr++){
+		funcs.push_back((*itr));
+	}
+	sort(funcs.begin(),funcs.end(),Pessoa::compare);
+	return funcs;
+}
+
+vector<Cliente*> Cadeia::getClientes(){
+
+	vector<Cliente*> cli;
+
+	set<Cliente*, clientLess>::iterator itr;
+	for (itr = clientes.begin(); itr != clientes.end(); itr++){
+		cli.push_back((*itr));
+	}
+	return cli;
+
+}
 
 void Cadeia::exportarCadeia()
 {

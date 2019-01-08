@@ -248,7 +248,7 @@ void promoverFuncionario(){
 	cout << "Introduza o numero de contribuinte do Funcionario: ";
 	inputHandler(noContribuinte);
 	try {
-		 newFunc = cadeia->getFuncionarioComNoContribuinte(noContribuinte);
+		newFunc = cadeia->getFuncionarioComNoContribuinte(noContribuinte);
 	} catch(NaoExistePessoa e) {
 		cout << "Nao existe nenhum Funcionario com numero de contribuinte " << e.getContribuinte() << " associado.\n";
 		return;
@@ -267,6 +267,25 @@ void promoverFuncionario(){
 	cout << "Funcionario promovido com sucesso.\n" << endl;
 }
 
+void mostrarFuncionarios(){
+	cout << "Funcionarios da Cadeia:" << endl << endl;
+	vector<Funcionario*> funcs = cadeia->getFuncionarios();
+	for(unsigned int i = 0; i < funcs.size(); i++){
+		cout << *funcs.at(i) << endl;
+	}
+	cout << "Funcionarios mostrados." << endl;
+}
+
+void mostrarClientes(){
+	cout << "Clientes da Cadeia:" << endl << endl;
+	vector<Cliente*> cli = cadeia->getClientes();
+	for(unsigned int i = 0; i < cli.size(); i++){
+		cout << *cli.at(i) << endl;
+	}
+	cout << "Funcionarios mostrados." << endl;
+}
+
+
 void gestaoClientes()
 {
 	bool reabrirMenu = true;
@@ -276,7 +295,8 @@ void gestaoClientes()
 		cout << "1. Criar ficha de cliente\n";
 		cout << "2. Apagar ficha de cliente\n";
 		cout << "3. Ver historial do cliente\n";
-		cout << "4. Voltar ao menu principal\n";
+		cout << "4. Mostrar clientes\n";
+		cout << "5. Voltar ao menu principal\n";
 		cout << "Insira a sua opcao: ";
 		unsigned int opcao;
 		inputHandler(opcao);
@@ -292,6 +312,9 @@ void gestaoClientes()
 			verHistorialCliente();
 			break;
 		case 4:
+			mostrarClientes();
+			break;
+		case 5:
 			reabrirMenu = false;
 			break;
 		default:
@@ -310,7 +333,8 @@ void gestaoFuncionarios()
 		cout << "2. Despedir Funcionario\n";
 		cout << "3. Transferir Funcionario\n";
 		cout << "4. Promover Funcionario\n";
-		cout << "5. Voltar ao menu principal\n";
+		cout << "5. Mostrar Funcionarios\n";
+		cout << "6. Voltar ao menu principal\n";
 		cout << "Insira a sua opcao: ";
 		unsigned int opcao;
 		inputHandler(opcao);
@@ -329,6 +353,9 @@ void gestaoFuncionarios()
 			promoverFuncionario();
 			break;
 		case 5:
+			mostrarFuncionarios();
+			break;
+		case 6:
 			reabrirMenu = false;
 			break;
 		default:
@@ -479,6 +506,22 @@ void venderFarmacia(){
 
 }
 
+void mostrarFuncionariosDaFarmacia(){
+
+	string nome, morada;
+	cout << "Introduza o nome da Farmacia: ";
+	getline(cin, nome);
+
+	Farmacia * farm = cadeia->getFarmaciaComNome(nome);
+	vector<Funcionario*> funcs = cadeia->getFuncionariosDaFarmacia(farm);
+	cout << endl << "Funcionarios da farmacia " << nome << ":" << endl;
+	for(unsigned int i = 0; i < funcs.size(); i++){
+		cout << *funcs.at(i) << endl;
+	}
+
+	cout << "Farmacia comprada com sucesso.\n";
+}
+
 void gestaoFarmacias()
 {
 	bool reabrirMenu = true;
@@ -487,7 +530,8 @@ void gestaoFarmacias()
 		displayLogo();
 		cout << "1. Comprar farmacia\n";
 		cout << "2. Vender farmacia\n";
-		cout << "3. Voltar ao menu principal\n";
+		cout << "3. Mostrar funcionarios da farmacia\n";
+		cout << "4. Voltar ao menu principal\n";
 		cout << "Insira a sua opcao: ";
 		unsigned int opcao;
 		inputHandler(opcao);
@@ -500,6 +544,9 @@ void gestaoFarmacias()
 			venderFarmacia();
 			break;
 		case 3:
+			mostrarFuncionariosDaFarmacia();
+			break;
+		case 4:
 			reabrirMenu = false;
 			break;
 		default:
@@ -676,7 +723,7 @@ void criarVenda(){
 	venda = new Venda(nomeFunc);
 
 	try {
-		 client = cadeia->getClienteComNoContribuinte(noContribuinte);
+		client = cadeia->getClienteComNoContribuinte(noContribuinte);
 	} catch(NaoExistePessoa e) {
 
 		cout << "Nao existe ficha para o cliente com numero de contribuinte " << noContribuinte << ". Deseja criar uma?(y/n)";

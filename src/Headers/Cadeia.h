@@ -190,6 +190,10 @@ public:
 	 */
 	vector <Funcionario* > getFuncionariosDaFarmacia(Farmacia* farm);
 
+	vector<Funcionario*> getFuncionarios();
+
+	vector<Cliente*> getClientes();
+
 	/**
 	 * @brief Exporta a cadeia para um ficheiro txt
 	 */
