@@ -1013,7 +1013,7 @@ void mostrarStock() {
 	vector<StockItem> items = farm->getStock();
 
 	if(items.size() == 0)
-		cout << "A farm�cia n�o tem itens em stock.\n";
+		cout << "A farmacia nao tem itens em stock.\n";
 	for(unsigned int i = 0; i < items.size(); i++){
 		cout << items.at(i) << endl;
 	}
