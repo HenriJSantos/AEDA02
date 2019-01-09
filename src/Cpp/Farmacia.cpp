@@ -84,7 +84,7 @@ void Farmacia::vendeItem(Produto * prod, unsigned int quant)
 	stock = queue_temp;
 }
 
-void Farmacia::restoreStock(unsigned int ammount)
+vector<StockItem> Farmacia::restoreStock(unsigned int ammount)
 {
 	vector<StockItem> temp;
 
@@ -106,6 +106,8 @@ void Farmacia::restoreStock(unsigned int ammount)
 	{
 		stock.push(temp[i]);
 	}
+
+	return temp;
 }
 
 vector<StockItem> Farmacia::stockWithLessThan(unsigned int ammount)

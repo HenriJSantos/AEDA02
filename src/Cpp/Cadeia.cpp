@@ -220,7 +220,17 @@ void Cadeia::exportarCadeia()
 	{
 		out << "   Farmacia " << this->farmacias[i]->getNome() << ":" << endl;
 		out << "      Morada: " << this->farmacias[i]->getMorada() << endl;
-		out << "      Gerente: " << this->farmacias[i]->getGerente() << endl << endl;
+		out << "      Gerente: " << this->farmacias[i]->getGerente() << endl;
+		out << "      Stock:\n";
+		vector<StockItem> stock = this->farmacias[i]->getStock();
+		if(stock.size() == 0)
+			out << "         Sem stock disponível.\n";
+		else
+			for (unsigned int i = 0; i < stock.size(); i++)
+			{
+				out << "         " << stock[i] << endl;
+			}
+		out << endl;
 	}
 	out << "Funcionarios:\n";
 	funcTable::iterator funcItr;
@@ -290,9 +300,17 @@ Cadeia::Cadeia(string nomeFicheiro, string nome)
 
 			Farmacia* f = new Farmacia(nome,morada);
 			f->setGerente(gerente);
-			this->addFarmacia(f);
 
 			getline(in,line);
+
+			while(getline(in,line) && line != "")
+			{
+				if(line == "         Sem stock disponível.")
+					continue;
+				f->addProductToStock(Produto::getProdutoComCodigo(line.substr(9,5)));
+				f->addStock(Produto::getProdutoComCodigo(line.substr(9,5)),stoi(line.substr(line.find('-')+1)));
+			}
+			this->addFarmacia(f);
 		}
 
 		while(getline(in,line) && line != "Clientes:")

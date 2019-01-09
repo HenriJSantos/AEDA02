@@ -96,8 +96,9 @@ public:
 	/**
 	 * @brief Garante que o stock de cada produto da farmacia tenha o valor minimo dado
 	 * @param min Valor minimo do stock
+	 * @return Vector with restored products
 	 */
-	void restoreStock(unsigned int min);
+	vector<StockItem> restoreStock(unsigned int min);
 	/**
 	 * @brief Adiciona um produto com stock 0 aos produtos da farmacia
 	 * @param prod Apontador para o produto
