@@ -1057,7 +1057,7 @@ void restaurarStockInferiorA()
 	}
 
 	unsigned int quant;
-	cout << "Introduza o limite superior dos items em stock que deseja mostrar:";
+	cout << "Introduza a quantidade minima em stock:";
 	inputHandler(quant);
 
 	vector<StockItem> items = farm->restoreStock(quant);
@@ -1078,7 +1078,7 @@ void gestaoStocks()
 	while(reabrirMenu)
 	{
 		displayLogo();
-		cout << "1. Adicionar stock\n";
+		cout << "1. Adicionar novo produto ao stock\n";
 		cout << "2. Adicionar quantidade ao stock\n";
 		cout << "3. Mostrar stock\n";
 		cout << "4. Mostrar items com stock inferior a n\n";
