@@ -105,6 +105,51 @@ void Cadeia::rmVenda(unsigned int id)
 		throw(NaoExisteVenda(id));
 }
 
+bool Cadeia::numeroContribuinteValido(unsigned int noContribuinte){
+
+	set<Cliente*, clientLess>::iterator itr;
+	for (itr = clientes.begin(); itr != clientes.end(); itr++)
+	{
+		if ((*itr)->getNoContribuinte() == noContribuinte)
+		{
+			return false;
+		}
+	}
+	Funcionario func("","",noContribuinte,"",0,"");
+	funcTable::iterator funcItr;
+	funcItr = funcionarios.find(&func);
+	if(funcItr != funcionarios.end()){
+		return false;
+	}
+
+	return true;
+}
+
+bool Cadeia::numeroContribuinteFuncionarioInexistente(unsigned int noContribuinte){
+
+	Funcionario func("","",noContribuinte,"",0,"");
+	funcTable::iterator funcItr;
+	funcItr = funcionarios.find(&func);
+	if(funcItr != funcionarios.end()){
+		return false;
+	}
+
+	return true;
+}
+
+bool Cadeia::numeroContribuinteClienteInexistente(unsigned int noContribuinte){
+
+	set<Cliente*, clientLess>::iterator itr;
+	for (itr = clientes.begin(); itr != clientes.end(); itr++)
+	{
+		if ((*itr)->getNoContribuinte() == noContribuinte)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
 Farmacia* Cadeia::getFarmaciaComNome(string nomeFarm)
 {
 	int left = 0, right = this->farmacias.size() - 1;

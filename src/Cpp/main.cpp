@@ -109,6 +109,11 @@ void criarFichaCliente()
 	getline(cin, distrito);
 	cout << "Introduza o numero de contribuinte do cliente: ";
 	inputHandler(noContribuinte);
+	while(!cadeia->numeroContribuinteValido(noContribuinte)){
+		cout << "Numero de contribuinte ja atribuido." << endl;
+		cout << "Introduza o numero de contribuinte do cliente: ";
+		inputHandler(noContribuinte);
+	}
 	Cliente* cl = new Cliente(nome, morada, noContribuinte, distrito);
 	cadeia->addCliente(cl);
 	cout << "Ficha de cliente criada com sucesso.\n";
@@ -171,11 +176,15 @@ void contratarFuncionario(){
 
 	cout << "Introduza o numero de contribuinte do Funcionario: ";
 	inputHandler(noContribuinte);
-
+	while(!cadeia->numeroContribuinteClienteInexistente(noContribuinte)){
+		cout << "Numero de contribuinte ja atribuido." << endl;
+		cout << "Introduza o numero de contribuinte do funcionario: ";
+		inputHandler(noContribuinte);
+	}
 
 	try{
 		newFunc = cadeia->getFuncionarioComNoContribuinte(noContribuinte);
-		cout << "Ex-funcionario encontrado, atualize os seus dados." << endl;
+		cout << "Funcionario encontrado, atualize os seus dados." << endl;
 		cout << "Introduza a morada do Funcionario: ";
 		getline(cin, morada);
 		newFunc->setMorada(morada);
@@ -759,6 +768,11 @@ void criarVenda(){
 	unsigned int noContribuinte;
 	cout << "Introduza o numero de contribuinte do cliente: ";
 	inputHandler(noContribuinte);
+	while(!cadeia->numeroContribuinteFuncionarioInexistente(noContribuinte)){
+		cout << "Numero de contribuinte invalido." << endl;
+		cout << "Introduza o numero de contribuinte do cliente: ";
+		inputHandler(noContribuinte);
+	}
 	string nomeFunc = func->getNome();
 	venda = new Venda(nomeFunc);
 

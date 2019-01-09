@@ -157,6 +157,12 @@ public:
 	 */
 	void rmVenda(unsigned int id);
 
+	bool numeroContribuinteValido(unsigned int noContribuinte);
+
+	bool numeroContribuinteFuncionarioInexistente(unsigned int noContribuinte);
+
+	bool numeroContribuinteClienteInexistente(unsigned int noContribuinte);
+
 	/**
 	 * @param nomeFarm Nome da farmacia
 	 * @return Apontador para a farmacia com nome "nomeFarm"
