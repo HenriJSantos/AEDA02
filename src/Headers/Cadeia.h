@@ -156,11 +156,25 @@ public:
 	 * @param id Identificador da venda a remover
 	 */
 	void rmVenda(unsigned int id);
-
+	/**
+	 * @brief Garante que nao existem dois numeros de contribuinte iguais tanto nos clientes como nos funcionarios
+	 * @param noContribuinte Numero de contribuinte que queremos ver se ja existe
+	 * @return "true" se o numero for valido, "false" se ja existir um igual
+	 */
 	bool numeroContribuinteValido(unsigned int noContribuinte);
 
+	/**
+	 * @brief Para verificar se o numero de contribuinte de funcionario dado como parametro e valido
+	 * @param noContribuinte Numero de contribuinte que queremos ver se ja existe
+	 * @return "true" se o numero de contribuinte nao existe, "false" caso contrario
+	 */
 	bool numeroContribuinteFuncionarioInexistente(unsigned int noContribuinte);
 
+	/**
+	 * @brief Para verificar se o numero de contribuinte de cliente dado como parametro e valido
+	 * @param noContribuinte Numero de contribuinte que queremos ver se ja existe
+	 * @return "true" se o numero de contribuinte nao existe, "false" caso contrario
+	 */
 	bool numeroContribuinteClienteInexistente(unsigned int noContribuinte);
 
 	/**

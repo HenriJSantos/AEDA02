@@ -56,6 +56,9 @@ public:
 	 */
 	bool passivelReceita() {return true;}
 
+	/**
+	 * @brief Destrutor da classe "MedicamentoPassReceita"
+	 */
 	~MedicamentoPassReceita();
 };
 

@@ -111,6 +111,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae7eee9f62be5b62ef6507b69ac0b2000"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia.html#ae7eee9f62be5b62ef6507b69ac0b2000">rmVenda</a> (unsigned int id)</td></tr>
 <tr class="memdesc:ae7eee9f62be5b62ef6507b69ac0b2000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove uma venda.  <a href="#ae7eee9f62be5b62ef6507b69ac0b2000">More...</a><br /></td></tr>
 <tr class="separator:ae7eee9f62be5b62ef6507b69ac0b2000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92a9d5e8b1ffd7ce41bafba18a22de69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia.html#a92a9d5e8b1ffd7ce41bafba18a22de69">numeroContribuinteValido</a> (unsigned int noContribuinte)</td></tr>
+<tr class="memdesc:a92a9d5e8b1ffd7ce41bafba18a22de69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Garante que nao existem dois numeros de contribuinte iguais tanto nos clientes como nos funcionarios.  <a href="#a92a9d5e8b1ffd7ce41bafba18a22de69">More...</a><br /></td></tr>
+<tr class="separator:a92a9d5e8b1ffd7ce41bafba18a22de69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01c43282c4d104a51a102ab69c8c2386"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia.html#a01c43282c4d104a51a102ab69c8c2386">numeroContribuinteFuncionarioInexistente</a> (unsigned int noContribuinte)</td></tr>
+<tr class="memdesc:a01c43282c4d104a51a102ab69c8c2386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Para verificar se o numero de contribuinte de funcionario dado como parametro e valido.  <a href="#a01c43282c4d104a51a102ab69c8c2386">More...</a><br /></td></tr>
+<tr class="separator:a01c43282c4d104a51a102ab69c8c2386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cbc42a88617ec3ff7ac04e61010da51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia.html#a2cbc42a88617ec3ff7ac04e61010da51">numeroContribuinteClienteInexistente</a> (unsigned int noContribuinte)</td></tr>
+<tr class="memdesc:a2cbc42a88617ec3ff7ac04e61010da51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Para verificar se o numero de contribuinte de cliente dado como parametro e valido.  <a href="#a2cbc42a88617ec3ff7ac04e61010da51">More...</a><br /></td></tr>
+<tr class="separator:a2cbc42a88617ec3ff7ac04e61010da51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfe6da35bf4e470ab444703cb0c004e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_farmacia.html">Farmacia</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia.html#abfe6da35bf4e470ab444703cb0c004e3">getFarmaciaComNome</a> (string nomeFarm)</td></tr>
 <tr class="separator:abfe6da35bf4e470ab444703cb0c004e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae14c995156e34ce458cfb1fa3400e7b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_funcionario.html">Funcionario</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia.html#ae14c995156e34ce458cfb1fa3400e7b7">getFuncionarioComNome</a> (string <a class="el" href="class_cadeia.html#aab650f1d430c6965d9a98df27d0ebab8">nome</a>)</td></tr>
@@ -127,6 +136,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a62c3764a0d288de8136df218ee59213d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac915074c3dc309fe252586e30bfea9c6"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_cliente.html">Cliente</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia.html#ac915074c3dc309fe252586e30bfea9c6">getClientes</a> ()</td></tr>
 <tr class="separator:ac915074c3dc309fe252586e30bfea9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ef7f63f68fabf599017237c9b5e24f"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_cliente.html">Cliente</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia.html#ae4ef7f63f68fabf599017237c9b5e24f">getClientesDoDistrito</a> (string distrito)</td></tr>
+<tr class="separator:ae4ef7f63f68fabf599017237c9b5e24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afce9c632a067dc378f4918d8d936d536"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia.html#afce9c632a067dc378f4918d8d936d536">exportarCadeia</a> ()</td></tr>
 <tr class="memdesc:afce9c632a067dc378f4918d8d936d536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exporta a cadeia para um ficheiro txt.  <a href="#afce9c632a067dc378f4918d8d936d536">More...</a><br /></td></tr>
 <tr class="separator:afce9c632a067dc378f4918d8d936d536"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -433,6 +444,31 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="ae4ef7f63f68fabf599017237c9b5e24f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4ef7f63f68fabf599017237c9b5e24f">&#9670;&nbsp;</a></span>getClientesDoDistrito()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="class_cliente.html">Cliente</a>*&gt; Cadeia::getClientesDoDistrito </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>distrito</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">distrito</td><td>Distrito a procurar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vetor com apontadores para os clientes da cadeia do distrito "distrito" </dd></dl>
+
+</div>
+</div>
 <a id="abfe6da35bf4e470ab444703cb0c004e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abfe6da35bf4e470ab444703cb0c004e3">&#9670;&nbsp;</a></span>getFarmaciaComNome()</h2>
 
@@ -568,6 +604,87 @@ Friends</h2></td></tr>
 
 <p>Retorna o string com o nome da cadeia. </p>
 <dl class="section return"><dt>Returns</dt><dd>Nome da cadeia </dd></dl>
+
+</div>
+</div>
+<a id="a2cbc42a88617ec3ff7ac04e61010da51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cbc42a88617ec3ff7ac04e61010da51">&#9670;&nbsp;</a></span>numeroContribuinteClienteInexistente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Cadeia::numeroContribuinteClienteInexistente </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>noContribuinte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Para verificar se o numero de contribuinte de cliente dado como parametro e valido. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">noContribuinte</td><td>Numero de contribuinte que queremos ver se ja existe </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>"true" se o numero de contribuinte nao existe, "false" caso contrario </dd></dl>
+
+</div>
+</div>
+<a id="a01c43282c4d104a51a102ab69c8c2386"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01c43282c4d104a51a102ab69c8c2386">&#9670;&nbsp;</a></span>numeroContribuinteFuncionarioInexistente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Cadeia::numeroContribuinteFuncionarioInexistente </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>noContribuinte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Para verificar se o numero de contribuinte de funcionario dado como parametro e valido. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">noContribuinte</td><td>Numero de contribuinte que queremos ver se ja existe </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>"true" se o numero de contribuinte nao existe, "false" caso contrario </dd></dl>
+
+</div>
+</div>
+<a id="a92a9d5e8b1ffd7ce41bafba18a22de69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92a9d5e8b1ffd7ce41bafba18a22de69">&#9670;&nbsp;</a></span>numeroContribuinteValido()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Cadeia::numeroContribuinteValido </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>noContribuinte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Garante que nao existem dois numeros de contribuinte iguais tanto nos clientes como nos funcionarios. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">noContribuinte</td><td>Numero de contribuinte que queremos ver se ja existe </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>"true" se o numero for valido, "false" se ja existir um igual </dd></dl>
 
 </div>
 </div>

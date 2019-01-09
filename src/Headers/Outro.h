@@ -51,6 +51,9 @@ public:
 	 */
 	static void setProxCodigo(unsigned int codigo);
 
+	/**
+	 * @brief Destrutor da classe "Outro"
+	 */
 	~Outro();
 };
 

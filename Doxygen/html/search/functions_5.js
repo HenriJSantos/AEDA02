@@ -6,6 +6,7 @@ var searchData=
   ['getclientecomnocontribuinte',['getClienteComNoContribuinte',['../class_cadeia.html#a90aa3ab7943593dda27192456ac34bb3',1,'Cadeia']]],
   ['getclientecomnome',['getClienteComNome',['../class_cadeia.html#af6116f3ebbefe02a525d2b7abb9535a4',1,'Cadeia']]],
   ['getclientes',['getClientes',['../class_cadeia.html#ac915074c3dc309fe252586e30bfea9c6',1,'Cadeia']]],
+  ['getclientesdodistrito',['getClientesDoDistrito',['../class_cadeia.html#ae4ef7f63f68fabf599017237c9b5e24f',1,'Cadeia']]],
   ['getcodigo',['getCodigo',['../class_item_venda.html#afa403b442d703b7c58a514482971b115',1,'ItemVenda::getCodigo()'],['../class_produto.html#a3193fad5983ef80d1240e292189006f3',1,'Produto::getCodigo()'],['../class_produto_inexistente.html#a4cf7bf787403f1ee5ed24571b1829f44',1,'ProdutoInexistente::getCodigo()']]],
   ['getcompart',['getCompart',['../class_item_venda.html#a58c27b1e7e42b1a83e28859f8a95f58c',1,'ItemVenda']]],
   ['getcontribuinte',['getContribuinte',['../class_nao_existe_pessoa.html#a4bcef8b3155f4b9d585879ba9e9d5b89',1,'NaoExistePessoa']]],

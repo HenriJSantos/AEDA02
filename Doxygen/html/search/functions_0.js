@@ -5,7 +5,7 @@ var searchData=
   ['addfarmacia',['addFarmacia',['../class_cadeia.html#a545d954a73b2f8e602d1501faa4eced4',1,'Cadeia']]],
   ['addfuncionario',['addFuncionario',['../class_cadeia.html#a1d135da5b397b2fd9d0b50f2db96cb70',1,'Cadeia']]],
   ['additem',['addItem',['../class_venda.html#a0e510d35d3065f1ffd9246c9306d678e',1,'Venda']]],
-  ['addproducttostock',['addProductToStock',['../class_farmacia.html#a914f5d85566edff08af2080c1449bdca',1,'Farmacia']]],
+  ['addproducttostock',['addProductToStock',['../class_farmacia.html#a1b6bb36e00b0d2e662c4467c21f98376',1,'Farmacia']]],
   ['addproduto',['addProduto',['../class_receita.html#af20ef80f53a6e03958cb625e0f4217f7',1,'Receita']]],
   ['addquantity',['addQuantity',['../class_stock_item.html#a8538299cb0ecf71f4f32800a3277785f',1,'StockItem']]],
   ['addreceita',['addReceita',['../class_venda.html#abcc41dfe6151940efb3496abb1c3380f',1,'Venda']]],
