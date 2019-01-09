@@ -64,6 +64,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_stock_item-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">StockItem Class Reference</div>  </div>
@@ -102,6 +103,12 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ae17f436d6930b69e8c272325c23ca796"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stock_item.html#ae17f436d6930b69e8c272325c23ca796">quant</a></td></tr>
 <tr class="memdesc:ae17f436d6930b69e8c272325c23ca796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantidade de produto (unidades em stock)  <a href="#ae17f436d6930b69e8c272325c23ca796">More...</a><br /></td></tr>
 <tr class="separator:ae17f436d6930b69e8c272325c23ca796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a0c7310d609c78806c30d9347966857d8"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stock_item.html#a0c7310d609c78806c30d9347966857d8">operator&lt;&lt;</a> (ostream &amp;out, <a class="el" href="class_stock_item.html">StockItem</a> &amp;si)</td></tr>
+<tr class="memdesc:a0c7310d609c78806c30d9347966857d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload do operator &lt;&lt; (para display no ecra)  <a href="#a0c7310d609c78806c30d9347966857d8">More...</a><br /></td></tr>
+<tr class="separator:a0c7310d609c78806c30d9347966857d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a003b54163cb6ef7ce1c6687803d624a5"></a>
@@ -281,6 +288,53 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>"true" se a quantidade existente for igual ao superior a dada como parametro, "false" caso contrario </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a0c7310d609c78806c30d9347966857d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c7310d609c78806c30d9347966857d8">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_stock_item.html">StockItem</a> &amp;&#160;</td>
+          <td class="paramname"><em>si</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload do operator &lt;&lt; (para display no ecra) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Output stream </td></tr>
+    <tr><td class="paramname">si</td><td><a class="el" href="class_stock_item.html">StockItem</a> a mostrar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_stock_item.html">StockItem</a> e respetiva informacao </dd></dl>
 
 </div>
 </div>
