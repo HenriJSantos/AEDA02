@@ -209,6 +209,18 @@ vector<Cliente*> Cadeia::getClientes(){
 
 }
 
+vector<Cliente*> Cadeia::getClientesDoDistrito(string distrito)
+{
+	vector<Cliente*> cli;
+
+	set<Cliente*, clientLess>::iterator itr;
+	for (itr = clientes.begin(); itr != clientes.end(); itr++){
+		if((*itr)->getDistrito() == distrito)
+			cli.push_back((*itr));
+	}
+	return cli;
+}
+
 void Cadeia::exportarCadeia()
 {
 	string fileName = "Farmácias " + this->nome;

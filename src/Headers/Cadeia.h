@@ -204,6 +204,12 @@ public:
 	vector<Cliente*> getClientes();
 
 	/**
+	 * @param distrito Distrito a procurar
+	 * @return Vetor com apontadores para os clientes da cadeia do distrito "distrito"
+	 */
+	vector<Cliente*> getClientesDoDistrito(string distrito);
+
+	/**
 	 * @brief Exporta a cadeia para um ficheiro txt
 	 */
 	void exportarCadeia();

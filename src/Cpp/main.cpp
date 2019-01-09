@@ -284,6 +284,20 @@ void mostrarClientes(){
 	}
 }
 
+void mostrarClientesDeDistrito()
+{
+	string distrito;
+	cout << "Introduza o distrito: ";
+	getline(cin, distrito);
+	cout << endl;
+	vector<Cliente*> cli = cadeia->getClientesDoDistrito(distrito);
+	if (cli.size() == 0)
+		cout << "A cadeia não tem clientes desse distrito.\n";
+	else
+		for(unsigned int i = 0; i < cli.size(); i++){
+			cout << *cli.at(i) << endl;
+		}
+}
 
 void gestaoClientes()
 {
@@ -295,7 +309,8 @@ void gestaoClientes()
 		cout << "2. Apagar ficha de cliente\n";
 		cout << "3. Ver historial do cliente\n";
 		cout << "4. Mostrar clientes\n";
-		cout << "5. Voltar ao menu principal\n";
+		cout << "5. Mostrar clientes de um distrito\n";
+		cout << "6. Voltar ao menu principal\n";
 		cout << "Insira a sua opcao: ";
 		unsigned int opcao;
 		inputHandler(opcao);
@@ -314,6 +329,9 @@ void gestaoClientes()
 			mostrarClientes();
 			break;
 		case 5:
+			mostrarClientesDeDistrito();
+			break;
+		case 6:
 			reabrirMenu = false;
 			break;
 		default:
