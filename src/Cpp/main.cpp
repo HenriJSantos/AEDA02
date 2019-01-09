@@ -1016,10 +1016,13 @@ void mostrarStockInferiorA(){
 
 	vector<StockItem> items = farm->stockWithLessThan(quant);
 
-	for(unsigned int i = 0; i < items.size(); i++){
-		cout << items.at(i) << endl;
+	if(items.size() == 0){
+		cout << "Nao ha items com stock inferior a " << quant << " nesta farmacia." << endl;
+	}else{
+		for(unsigned int i = 0; i < items.size(); i++){
+			cout << items.at(i) << endl;
+		}
 	}
-	cout << endl;
 }
 
 void gestaoStocks()
@@ -1030,8 +1033,8 @@ void gestaoStocks()
 		displayLogo();
 		cout << "1. Adicionar stock\n";
 		cout << "2. Adicionar quantidade ao stock\n";
-		cout << "3. Mostrar items com stock inferior a n\n";
-		cout << "4. Voltar ao menu principal\n";
+		cout << "4. Mostrar items com stock inferior a n\n";
+		cout << "5. Voltar ao menu principal\n";
 		cout << "Insira a sua opcao: ";
 		unsigned int opcao;
 		inputHandler(opcao);
@@ -1043,10 +1046,10 @@ void gestaoStocks()
 		case 2:
 			adicionarQuantAoStock();
 			break;
-		case 3:
+		case 4:
 			mostrarStockInferiorA();
 			break;
-		case 4:
+		case 5:
 			reabrirMenu = false;
 			break;
 		default:

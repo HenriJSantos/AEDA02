@@ -45,6 +45,6 @@ bool StockItem::operator< (const StockItem & si) const
 }
 
 std::ostream& operator<< (ostream & out, StockItem &si){
-	out << "Produto \\ quantidade: " << si.getProduct()->getCodigo() << "-" << si.getProduct()->getNome() << " " << si.getQuantity() << endl;
+	out << si.getProduct()->getCodigo() << "(" << si.getProduct()->getNome() << ")- " << si.getQuantity();
     return out;
 }
