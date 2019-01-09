@@ -167,22 +167,44 @@ void contratarFuncionario(){
 		cout << "Nao existe nenhuma farmacia com nome " << e.getNome() << " associado.\n";
 		return;
 	}
+	Funcionario* newFunc;
 
-	cout << "Introduza o nome do Funcionario: ";
-	getline(cin, nome);
-	cout << "Introduza a morada do Funcionario: ";
-	getline(cin, morada);
-	cout << "Introduza o distrito do Funcionario: ";
-	getline(cin, distrito);
 	cout << "Introduza o numero de contribuinte do Funcionario: ";
 	inputHandler(noContribuinte);
-	cout << "Introduza a password do Funcionario: ";
-	getline(cin, password);
-	cout << "Introduza o salario do Funcionario: ";
-	inputHandler(salario);
-	Funcionario* newFunc = new Funcionario(nome, morada, noContribuinte, distrito, salario, password);
-	newFunc->setFarmacia(farm);
-	cadeia->addFuncionario(newFunc);
+
+
+	try{
+		newFunc = cadeia->getFuncionarioComNoContribuinte(noContribuinte);
+		cout << "Ex-funcionario encontrado, atualize os seus dados." << endl;
+		cout << "Introduza a morada do Funcionario: ";
+		getline(cin, morada);
+		newFunc->setMorada(morada);
+		cout << "Introduza o distrito do Funcionario: ";
+		getline(cin, distrito);
+		newFunc->setDistrito(distrito);
+		cout << "Introduza a password do Funcionario: ";
+		getline(cin, password);
+		newFunc->setPassword(password);
+		cout << "Introduza o salario do Funcionario: ";
+		inputHandler(salario);
+		newFunc->setSalario(salario);
+		newFunc->setFarmacia(farm);
+		newFunc->setCargo("Funcionario");
+	}catch(NaoExistePessoa e){
+		cout << "Introduza o nome do Funcionario: ";
+		getline(cin, nome);
+		cout << "Introduza a morada do Funcionario: ";
+		getline(cin, morada);
+		cout << "Introduza o distrito do Funcionario: ";
+		getline(cin, distrito);
+		cout << "Introduza a password do Funcionario: ";
+		getline(cin, password);
+		cout << "Introduza o salario do Funcionario: ";
+		inputHandler(salario);
+		newFunc = new Funcionario(nome, morada, noContribuinte, distrito, salario, password);
+		newFunc->setFarmacia(farm);
+		cadeia->addFuncionario(newFunc);
+	}
 
 	cout << "Funcionario contratado.\n";
 }
@@ -205,6 +227,7 @@ void despedirFuncionario(){
 	}
 	newFunc->setFarmacia(NULL);
 	newFunc->setCargo("Nenhum");
+	newFunc->setSalario(0);
 	cout << "Funcionario despedido com sucesso." << endl;
 }
 

@@ -261,10 +261,10 @@ void Cadeia::exportarCadeia()
 	set<Cliente*, clientLess>::iterator itr;
 	for (itr = clientes.begin(); itr != clientes.end(); itr++)
 	{
+		out << "   Distrito: " << (*itr)->getDistrito() << endl;
 		out << "   Nome: " << (*itr)->getNome() << endl;
 		out << "   No. Contribuinte: " << (*itr)->getNoContribuinte() << endl;
 		out << "   Morada: " << (*itr)->getMorada() << endl;
-		out << "   Distrito: " << (*itr)->getDistrito() << endl;
 		out << "   Historial:" << endl;
 		if((*itr)->getHistorial().size()==0){
 			out << "     Nenhuma compra efetuada" << endl << endl;
@@ -366,6 +366,9 @@ Cadeia::Cadeia(string nomeFicheiro, string nome)
 		getline(in, line);
 		while (!in.eof())
 		{
+			string distrito = line.substr(13);
+
+			getline(in,line);
 			string nome = line.substr(9);
 
 			getline(in,line);
@@ -373,9 +376,6 @@ Cadeia::Cadeia(string nomeFicheiro, string nome)
 
 			getline(in,line);
 			string morada = line.substr(11);
-
-			getline(in,line);
-			string distrito = line.substr(13);
 
 			Cliente* cl = new Cliente(nome,morada,noContribuinte, distrito);
 			this->addCliente(cl);
