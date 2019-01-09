@@ -50,6 +50,8 @@ void importarProdutos()
 {
 	ifstream in;
 	in.open("Output/Produtos.txt");
+	Produto * old = new Produto("OLD","Produto ja nao vendido",0,"Produto que ja nao e vendido");
+	Produto::produtos.push_back(old);
 	if (in.is_open())
 	{
 		while(!in.eof())
@@ -60,7 +62,7 @@ void importarProdutos()
 			getline(in,codigo);
 			if (codigo == "")
 				break;
-			codigo = codigo.substr(8,5);
+			codigo = codigo.substr(8);
 
 			string nome;
 			getline(in, nome);
@@ -87,11 +89,14 @@ void importarProdutos()
 			}
 			else if (tipo == "Outro")
 			{
-				if ((unsigned int)stoi(codigo.substr(1)) > Outro::getProxCodigo()-1)
-					Outro::setProxCodigo(stoi(codigo.substr(1))+1);
+				if(codigo != "OLD")
+				{
+					if ((unsigned int)stoi(codigo.substr(1)) > Outro::getProxCodigo()-1)
+						Outro::setProxCodigo(stoi(codigo.substr(1))+1);
 
-				Outro* p = new Outro(codigo, nome, preco, descricao);
-				Produto::produtos.push_back(p);
+					Outro* p = new Outro(codigo, nome, preco, descricao);
+					Produto::produtos.push_back(p);
+				}
 			}
 			else if (tipo == "Medicamento Passível a Receita")
 			{

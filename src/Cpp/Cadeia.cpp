@@ -364,8 +364,11 @@ Cadeia::Cadeia(string nomeFicheiro, string nome)
 			{
 				if(line == "         Sem stock disponível.")
 					continue;
-				f->addProductToStock(Produto::getProdutoComCodigo(line.substr(9,5)));
-				f->addStock(Produto::getProdutoComCodigo(line.substr(9,5)),stoi(line.substr(line.find('-')+1)));
+				try{
+					f->addProductToStock(Produto::getProdutoComCodigo(line.substr(9,5)));
+					f->addStock(Produto::getProdutoComCodigo(line.substr(9,5)),stoi(line.substr(line.find('-')+1)));
+				}
+				catch (ProdutoInexistente e) {}
 			}
 			this->addFarmacia(f);
 		}
@@ -471,9 +474,14 @@ Cadeia::Cadeia(string nomeFicheiro, string nome)
 						getline(in,line);
 						float subtotal = stof(line.substr(19,line.size()-20));
 
-						ItemVenda item(Produto::getProdutoComNome(nome)->getCodigo(), quant, iva, precUnid, compart, subtotal);
+						string codigo;
+						try {
+							codigo = Produto::getProdutoComNome(nome)->getCodigo();
+						} catch (ProdutoInexistente e) {
+							codigo = "OLD";
+						}
+						ItemVenda item(codigo, quant, iva, precUnid, compart, subtotal);
 						v->loadItem(item);
-
 						getline(in,line);
 					}
 					float total = stof(line.substr(14,line.size()-15));
