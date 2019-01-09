@@ -25,10 +25,10 @@ vector<Venda*> Cliente::getHistorial() {
 }
 
 std::ostream& operator<< (ostream & out, Cliente &cli){
+	out << "Distrito: " << cli.getDistrito() << endl;
 	out << "Nome: " << cli.getNome() << endl;
 	out << "No. de Contribuinte: " << cli.getNoContribuinte() << endl;
 	out << "Morada: " << cli.getMorada() << endl;
-	out << "Distrito: " << cli.getDistrito() << endl;
 	return out;
 }
 
