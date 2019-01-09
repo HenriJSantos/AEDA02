@@ -90,7 +90,7 @@ public:
 	friend std::ostream& operator<< (ostream & out, Farmacia & farm);
 	/**
 	 * @brief Devolve o stock da farmacia
-	 * @return Vetor que contém todos os stock items da farmacia
+	 * @return Vetor que contem todos os stock items da farmacia
 	 */
 	vector<StockItem> getStock();
 	/**
