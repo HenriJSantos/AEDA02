@@ -45,10 +45,23 @@ std::ostream& operator<< (ostream & out, Farmacia & farm){
 	return out;
 }
 
-void Farmacia::addProductToStock(Produto * prod)
+bool Farmacia::addProductToStock(Produto * prod)
 {
+	priority_queue<StockItem> queue_temp = stock;
+
+	while(!queue_temp.empty())
+	{
+		StockItem copy = queue_temp.top();
+		queue_temp.pop();
+		if(copy.getProduct() == prod)
+		{
+			return false;
+		}
+	}
+
 	StockItem si(prod, 0);
 	stock.push(si);
+	return true;
 }
 
 void Farmacia::vendeItem(Produto * prod, unsigned int quant)
