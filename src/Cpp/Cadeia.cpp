@@ -255,7 +255,7 @@ void Cadeia::exportarCadeia()
 		out << "   Distrito: " << (*itr)->getDistrito() << endl;
 		out << "   Historial:" << endl;
 		if((*itr)->getHistorial().size()==0){
-			out << "     Nenhuma compra efetuada" << endl;
+			out << "     Nenhuma compra efetuada" << endl << endl;
 		}
 		for(unsigned int j = 0; j < (*itr)->getHistorial().size(); j++){
 			out << "     Compra " << (*itr)->getHistorial().at(j)->getId() << ":" << endl;
@@ -371,7 +371,10 @@ Cadeia::Cadeia(string nomeFicheiro, string nome)
 			getline(in,line);
 			getline(in,line);
 			if (line == "     Nenhuma compra efetuada")
+			{
 				getline(in,line);
+				getline(in,line);
+			}
 			else
 			{
 				do

@@ -88,7 +88,7 @@ void login()
 			cout << "Credenciais invalidas. Tente novamente.\n";
 			continue;
 		}
-		if(func->getPassword() != password)
+		if(func->getPassword() != password || func->getCargo() != "Gerente")
 		{
 			cout << "Credenciais invalidas. Tente novamente.\n";
 			continue;
