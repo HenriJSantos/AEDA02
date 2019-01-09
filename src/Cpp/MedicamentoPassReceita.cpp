@@ -22,3 +22,4 @@ bool MedicamentoPassReceita::adquirivelSemReceita()
 	return this->semReceita;
 }
 
+MedicamentoPassReceita::~MedicamentoPassReceita() {}

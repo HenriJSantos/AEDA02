@@ -39,7 +39,4 @@ string Outro::criarCodigoValido()
 	return codigo;
 }
 
-Outro::~Outro()
-{
-	delete this;
-}
+Outro::~Outro() {}

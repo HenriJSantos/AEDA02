@@ -40,3 +40,5 @@ string Medicamento::criarCodigoValido()
 	return codigo;
 }
 
+Medicamento::~Medicamento() {}
+

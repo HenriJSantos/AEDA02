@@ -51,6 +51,8 @@ public:
 	 * @param codigo Codigo a atribuir
 	 */
 	static void setProxCodigo(unsigned int codigo);
+
+	virtual ~Medicamento();
 };
 
 #endif

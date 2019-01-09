@@ -80,8 +80,6 @@ vector<Produto*> Produto::getProdutos()
 
 void Produto::removeProdutoComCodigo(string codigo){
 
-	//Produto *prod = Produto::getProdutoComCodigo(codigo);
-
 	for(unsigned int i = 0; i < produtos.size(); i++){
 		if(produtos.at(i)->getCodigo() == codigo){
 			delete produtos.at(i);
@@ -120,8 +118,4 @@ Produto* Produto::getProdutoComNome(string nome){
 	throw (ProdutoInexistente(nome));
 }
 
-Produto::~Produto()
-{
-	removeProdutoComCodigo(this->codigo);
-	delete this;
-}
+Produto::~Produto() {}

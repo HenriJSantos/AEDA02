@@ -55,6 +55,8 @@ public:
 	 * @return "true" - o medicamento e passivel a receita
 	 */
 	bool passivelReceita() {return true;}
+
+	~MedicamentoPassReceita();
 };
 
 #endif
