@@ -998,6 +998,30 @@ void adicionarQuantAoStock(){
 	cout << "Quantidade adicionada com sucesso.\n";
 }
 
+void mostrarStockInferiorA(){
+	Farmacia* farm;
+	string nomeFarm;
+	cout << "Introduza o nome da farmacia: ";
+	getline(cin, nomeFarm);
+	try {
+		farm = cadeia->getFarmaciaComNome(nomeFarm);
+	} catch(NaoExisteFarmacia e) {
+		cout << "Nao existe nenhuma farmacia com nome " << e.getNome() << " associado.\n";
+		return;
+	}
+
+	unsigned int quant;
+	cout << "Introduza o limite superior dos items em stock que deseja mostrar:";
+	inputHandler(quant);
+
+	vector<StockItem> items = farm->stockWithLessThan(quant);
+
+	for(unsigned int i = 0; i < items.size(); i++){
+		cout << items.at(i) << endl;
+	}
+	cout << endl;
+}
+
 void gestaoStocks()
 {
 	bool reabrirMenu = true;
@@ -1006,7 +1030,8 @@ void gestaoStocks()
 		displayLogo();
 		cout << "1. Adicionar stock\n";
 		cout << "2. Adicionar quantidade ao stock\n";
-		cout << "3. Voltar ao menu principal\n";
+		cout << "3. Mostrar items com stock inferior a n\n";
+		cout << "4. Voltar ao menu principal\n";
 		cout << "Insira a sua opcao: ";
 		unsigned int opcao;
 		inputHandler(opcao);
@@ -1019,6 +1044,9 @@ void gestaoStocks()
 			adicionarQuantAoStock();
 			break;
 		case 3:
+			mostrarStockInferiorA();
+			break;
+		case 4:
 			reabrirMenu = false;
 			break;
 		default:

@@ -94,16 +94,13 @@ void Farmacia::restoreStock(unsigned int ammount)
 		StockItem copy = stock.top();
 		if(copy.getQuantity() < ammount)
 		{
-			temp.push_back(stock.top());
+			StockItem copy = stock.top();
+			copy.setQuantity(ammount);
+			temp.push_back(copy);
 			stock.pop();
 		}
 		else
 			break;
-	}
-
-	for (unsigned int i = 0; i < temp.size(); i++)
-	{
-		stock.push(temp[i]);
 	}
 
 	for (unsigned int i = 0; i < temp.size(); i++)
