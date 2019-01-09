@@ -54,7 +54,7 @@ int importarFicheiros(string nomeFicheiro, string nome)
 		return 1;
 	}
 	catch (const std::out_of_range &) {
-		cout << "Ficheiro inválido.\n";
+		cout << "Ficheiro invï¿½lido.\n";
 		return 1;
 	}
 	return 0;
@@ -399,7 +399,7 @@ void criarReceita(){
 	try{
 		cl = cadeia->getClienteComNoContribuinte(noContribuinte);
 	} catch (NaoExistePessoa e) {
-		cout << "Não existe cliente com no. contribuinte " << e.getContribuinte() << endl;
+		cout << "Nï¿½o existe cliente com no. contribuinte " << e.getContribuinte() << endl;
 		return;
 	}
 
@@ -723,7 +723,7 @@ void criarVenda(){
 	try{
 		farm = cadeia->getFarmaciaComNome(nomeFarm);
 	} catch (NaoExisteFarmacia) {
-		cout << "Farmácia Inexistente.";
+		cout << "Farmï¿½cia Inexistente.";
 		return;
 	}
 	string  criarFicha;
@@ -998,6 +998,29 @@ void adicionarQuantAoStock(){
 	cout << "Quantidade adicionada com sucesso.\n";
 }
 
+void mostrarStock() {
+	Farmacia* farm;
+	string nomeFarm;
+	cout << "Introduza o nome da farmacia: ";
+	getline(cin, nomeFarm);
+	try {
+		farm = cadeia->getFarmaciaComNome(nomeFarm);
+	} catch(NaoExisteFarmacia e) {
+		cout << "Nao existe nenhuma farmacia com nome " << e.getNome() << " associado.\n";
+		return;
+	}
+
+	vector<StockItem> items = farm->getStock();
+
+	if(items.size() == 0)
+		cout << "A farmï¿½cia nï¿½o tem itens em stock.\n";
+	for(unsigned int i = 0; i < items.size(); i++){
+		cout << items.at(i) << endl;
+	}
+
+	cout << endl;
+}
+
 void mostrarStockInferiorA(){
 	Farmacia* farm;
 	string nomeFarm;
@@ -1033,6 +1056,7 @@ void gestaoStocks()
 		displayLogo();
 		cout << "1. Adicionar stock\n";
 		cout << "2. Adicionar quantidade ao stock\n";
+		cout << "3. Mostrar stock\n";
 		cout << "4. Mostrar items com stock inferior a n\n";
 		cout << "5. Voltar ao menu principal\n";
 		cout << "Insira a sua opcao: ";
@@ -1045,6 +1069,9 @@ void gestaoStocks()
 			break;
 		case 2:
 			adicionarQuantAoStock();
+			break;
+		case 3:
+			mostrarStock();
 			break;
 		case 4:
 			mostrarStockInferiorA();

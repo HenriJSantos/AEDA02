@@ -42,7 +42,6 @@ std::ostream& operator<< (ostream & out, Farmacia & farm){
 	out << "Nome da Farmacia: " << farm.getNome() << endl;
 	out << "Morada: " <<  farm.getMorada() << endl;
 	out << "Gerente: " << farm.getGerente() << endl;
-
 	return out;
 }
 
@@ -160,4 +159,16 @@ void Farmacia::addStock(Produto* prod, unsigned int quant){
 		tempStock.push(removedItems.at(i));
 	}
 	stock = tempStock;
+}
+
+vector<StockItem> Farmacia::getStock()
+{
+	priority_queue<StockItem> copy = stock;
+	vector<StockItem> returnVect;
+	while(!copy.empty())
+	{
+		returnVect.push_back(copy.top());
+		copy.pop();
+	}
+	return returnVect;
 }

@@ -89,6 +89,11 @@ public:
 	 */
 	friend std::ostream& operator<< (ostream & out, Farmacia & farm);
 	/**
+	 * @brief Devolve o stock da farmácia
+	 * @return Vetor que contém todos os stock items da farmácia
+	 */
+	vector<StockItem> getStock();
+	/**
 	 * @brief Garante que o stock de cada produto da farmacia tenha o valor minimo dado
 	 * @param min Valor minimo do stock
 	 */
