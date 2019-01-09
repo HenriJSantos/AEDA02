@@ -49,6 +49,7 @@ var searchData=
   ['getreceitacomnumero',['getReceitaComNumero',['../class_receita.html#ace4d1af54b56d55bfc1c7a47c6babe4b',1,'Receita']]],
   ['getsalario',['getSalario',['../class_funcionario.html#a103f3cbdbc44400c3a66267d88ad30b9',1,'Funcionario']]],
   ['getsegundos',['getSegundos',['../class_hora.html#aa4993488a2d89c764311c673b7f82137',1,'Hora']]],
+  ['getstock',['getStock',['../class_farmacia.html#af13f407f1208557cadbeb80918f0c8d6',1,'Farmacia']]],
   ['getsubtotal',['getSubtotal',['../class_item_venda.html#a904ee1fc8cd38ab61ecdb368d42cdd07',1,'ItemVenda']]],
   ['gettaxadesc',['getTaxaDesc',['../class_medicamento_pass_receita.html#a8a633fa75f1f55f19941da2ad0ae0980',1,'MedicamentoPassReceita::getTaxaDesc()'],['../class_produto.html#ae8e3ef280b90eac3fae0efcebbc5f23c',1,'Produto::getTaxaDesc()']]],
   ['gettipo',['getTipo',['../class_nao_existe_pessoa.html#ab59e86718adde9438c7d8712ecebb15b',1,'NaoExistePessoa']]],

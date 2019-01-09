@@ -274,7 +274,6 @@ void mostrarFuncionarios(){
 	for(unsigned int i = 0; i < funcs.size(); i++){
 		cout << *funcs.at(i) << endl;
 	}
-	cout << endl;
 }
 
 void mostrarClientes(){
@@ -283,7 +282,6 @@ void mostrarClientes(){
 	for(unsigned int i = 0; i < cli.size(); i++){
 		cout << *cli.at(i) << endl;
 	}
-	cout << endl;
 }
 
 
@@ -515,12 +513,10 @@ void mostrarFuncionariosDaFarmacia(){
 
 	Farmacia * farm = cadeia->getFarmaciaComNome(nome);
 	vector<Funcionario*> funcs = cadeia->getFuncionariosDaFarmacia(farm);
-	cout << endl << "Funcionarios da farmacia " << nome << ":" << endl;
+	cout << "Funcionarios da farmacia " << nome << ":" << endl << endl;
 	for(unsigned int i = 0; i < funcs.size(); i++){
 		cout << *funcs.at(i) << endl;
 	}
-
-	cout << endl;
 }
 
 void gestaoFarmacias()
@@ -717,15 +713,7 @@ void criarVenda(){
 	Cliente* client;
 	Venda* venda;
 	Farmacia* farm;
-	string nomeFarm;
-	cout << "Introduza o nome da farmacia que quer gerir: ";
-	inputHandler(nomeFarm);
-	try{
-		farm = cadeia->getFarmaciaComNome(nomeFarm);
-	} catch (NaoExisteFarmacia) {
-		cout << "Farm�cia Inexistente.";
-		return;
-	}
+	farm = func->getFarmacia();
 	string  criarFicha;
 	unsigned int noContribuinte;
 	cout << "Introduza o numero de contribuinte do cliente: ";
@@ -902,8 +890,10 @@ void criarVenda(){
 		}while(maisItens);
 	}
 
-	client->addCompra(venda);
-	cadeia->addVenda(venda);
+	if(venda->getItens().size() > 0){
+		client->addCompra(venda);
+		cadeia->addVenda(venda);
+	}
 
 	cout << "Transacao completa.\n";
 
@@ -955,9 +945,14 @@ void adicionarStock(){
 		cout << "Nao existe nenhum Produto com codigo " << e.getCodigo() << " associado.\n";
 		return;
 	}
-	farm->addProductToStock(prod);
+
 	unsigned int quant;
-	cout << "Introduza a quantidade que deseja adicionar ao stock:";
+	if(!(farm->addProductToStock(prod))){
+		cout << "Produto ja se encontra em stock, introduza uma quantidade para adicionar:";
+	}
+	else{
+		cout << "Introduza a quantidade que deseja adicionar ao stock:";
+	}
 	inputHandler(quant);
 	farm->addStock(prod,quant);
 
